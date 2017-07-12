@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cm}{/*}
+\PY{c+cm}{Parameters:}
+\PY{c+cm}{	}
+\PY{c+cm}{src\PYZus{}seq: Sequence of an array of points.}
+
+\PY{c+cm}{header\PYZus{}size: Header size of the approximated curve[s]}
+
+\PY{c+cm}{storage: Container for the approximated contours. If it is NULL, }
+\PY{c+cm}{         the input sequences’ storage is used}
+
+\PY{c+cm}{method: Approximation method; only CV\PYZus{}POLY\PYZus{}APPROX\PYZus{}DP is supported, }
+\PY{c+cm}{        that corresponds to the Douglas-Peucker algorithm}
+
+\PY{c+cm}{parameter: Method-specific parameter; in the case of CV\PYZus{}POLY\PYZus{}APPROX\PYZus{}DP }
+\PY{c+cm}{           it is a desired approximation accuracy}
+
+\PY{c+cm}{parameter2: If case if src\PYZus{}seq is a sequence, the parameter determines }
+\PY{c+cm}{            whether the single sequence should be approximated or all }
+\PY{c+cm}{            sequences on the same level or below src\PYZus{}seq (see FindContours}
+\PY{c+cm}{            for description of hierarchical contour structures). If src\PYZus{}seq }
+\PY{c+cm}{            is an array CvMat* of points, the parameter specifies whether the}
+\PY{c+cm}{            curve is closed ( parameter2 !=0) or not ( parameter2 =0)}
+\PY{c+cm}{*/}
+
+\PY{n}{CvSeq}\PY{o}{*} \PY{n}{cvApproxPoly}\PY{p}{(}\PY{k}{const} \PY{k+kt}{void}\PY{o}{*} \PY{n}{src\PYZus{}seq}\PY{p}{,} \PY{k+kt}{int} \PY{n}{header\PYZus{}size}\PY{p}{,}
+\PY{n}{CvMemStorage}\PY{o}{*} \PY{n}{storage}\PY{p}{,} \PY{k+kt}{int} \PY{n}{method}\PY{p}{,} \PY{k+kt}{double} \PY{n}{eps}\PY{p}{,} \PY{k+kt}{int} \PY{n}{recursive}\PY{o}{=}\PY{l+m+mi}{0} \PY{p}{)}
+\end{Verbatim}
+

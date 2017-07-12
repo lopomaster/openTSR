@@ -1,0 +1,269 @@
+\documentclass[xcolor=x11names,compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{framed}
+\usepackage[version=0.96]{pgf}
+
+
+\definecolor{shadecolor}{RGB}{243,243,243}
+\renewcommand{\figurename}{Figura}
+
+\newtheoremstyle{cuadrado}% name
+  {1pt}%      Space above
+  {8pt}%      Space below
+  {\itshape}%         Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\itshape}% Thm head font
+  {}%        Punctuation after thm head
+  {0em}%     Space after thm head: " " = normal interword space;
+        %       \newline = linebreak
+  {}%         Thm head spec (can be left empty, meaning `normal')
+
+\theoremstyle{cuadrado}
+\newtheorem*{teo}{}
+
+
+\newcommand{\slidesettitulo}{\textcolor{black}{Vehículo reconocedor de señales de tráfico}}
+\newcommand{\shorttitulo}{OpenTSR}
+\newcommand{\authornombre}{Manuel López Urbina}
+\newcommand{\email}{\vspace*{.1in}{\includegraphics[width=3.5cm]{image.png}}}
+\newcommand{\web}{https://forja.rediris.es/projects/opentsr/}
+\newcommand{\institucion}{Universidad de Cádiz  \\ Escuela Superior de Ingeniería}
+\newcommand{\tutor}{Arturo Morgado Estévez}
+\newenvironment{fondo}{\begin{teo}}{\end{teo}}
+
+
+\definecolor{darkgray}{RGB}{237,236,236}
+\definecolor{azuladwys}{RGB}{157,189,219}
+\definecolor{azuladwys_version}{RGB}{174,208,239}
+\definecolor{plata}{RGB}{145,143,144}
+
+
+\usetheme{Ilmenau}
+
+\setbeamertemplate{footline}{
+\begin{tiny}
+\setbeamercolor{foot1}{fg=black!70,bg=gray!10}
+\setbeamercolor{foot2}{fg=gray,bg=gray!15}
+\setbeamercolor{foot3}{fg=gray,bg=gray!10}
+\setbeamercolor{foot4}{fg=black!70,bg=gray!20}
+\setbeamercolor{foot5}{fg=gray,bg=gray!15}
+\setbeamercolor{foot6}{fg=black,bg=gray!20}
+
+%\setbeamercolor{foot1}{fg=azuladwys_version,bg=azuladwys_version}
+%\setbeamercolor{foot2}{fg=azuladwys,bg=azuladwys}
+%\setbeamercolor{foot3}{fg=azuladwys_version,bg=azuladwys_version}
+%\setbeamercolor{foot4}{fg=azuladwys,bg=azuladwys}
+%\setbeamercolor{foot5}{fg=azuladwys,bg=azuladwys}
+%\setbeamercolor{foot6}{fg=black,bg=gray!20}
+
+% taken from theme infolines and adapted
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.25ex,dp=1ex,center]{foot1}%
+  %\fontsize{5}{5}\selectfont
+  \shorttitulo
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.1\paperwidth,ht=2.25ex,dp=1ex,center]{foot2}
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,center]{foot3}
+  \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{foot4}%
+  %\fontsize{5}{5}\selectfont
+  \web
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.05\paperwidth,ht=2.25ex,dp=1ex,center]{foot5}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{foot6}%
+	\insertframenumber{} / \inserttotalframenumber \hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+\end{tiny}
+\vskip10pt
+}
+
+
+%\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{} %Elimina los iconos que permiten la navegación en el documento
+
+\usecolortheme[named=darkgray]{structure}
+\usefonttheme{professionalfonts}
+\useoutertheme{miniframes}
+
+\title{\slidesettitulo}
+\author{\authornombre \\ \email \\ Director: \tutor}
+\institute{\institucion}
+\date{ }
+\setcounter{subsection}{0}
+
+
+
+
+\begin{document}
+\scriptsize{
+
+\frame{\titlepage
+
+}
+
+\section{Índice}
+\frame{\frametitle{\textcolor{black}{Índice}}
+  \textcolor{black}{\tableofcontents}
+}
+
+
+\section{Presentación}
+\subsection{Introducción}
+
+\frame{\frametitle{\textcolor{black}{Introducción}}
+
+}
+
+\subsection{Objetivos}
+\frame{\frametitle{\textcolor{black}{Objetivos}}
+
+El objetivo principal del proyecto es elaborar un software de detección de señales de tráfico mediante el análisis de las imágenes.\\
+
+Junto al software irá asociado a un vehículo dotado de una cámara para permitir la visualización del terreno además de ser capaz de reconocer las señales de tráfico mostrando en el ordenador la última señal reconocida. Por otra parte, permitirá al vehículo actuar en consecuencia a la señal detectada.\\
+
+En resumen, se desea dotar a un vehículo de un sistema de conducción autónoma a partir de señales de tráfico.
+
+}
+
+
+
+
+\section{Planificación}
+
+\frame{\frametitle{\textcolor{black}{Diagrama de Gantt}}
+
+\begin{figure}[H]
+\includegraphics[width=6.5cm]{tareas-gantt.png}
+\end{figure}
+
+}
+
+\frame{\frametitle{\textcolor{black}{Diagrama de Gantt}}
+
+\begin{figure}[H]
+\includegraphics[width=4.4cm]{gantt-1.png}
+\includegraphics[width=4.4cm]{gantt-2.png}
+\includegraphics[width=2.25cm]{gantt-3.png}
+\end{figure}
+
+}
+
+
+
+\section{Desarrollo}
+
+
+\frame{\frametitle{\textcolor{black}{Metodología}}
+
+\begin{figure}[H]
+\includegraphics[width=6.5cm]{subsistemas.png}
+\end{figure}
+
+}
+
+
+
+
+\section{Software de reconocimiento}
+
+\subsection{Prototipo 1}
+
+\frame{\frametitle{\textcolor{black}{Comparación de plantillas}}
+
+
+
+}
+
+\subsection{Prototipo 2}
+
+\frame{\frametitle{\textcolor{black}{Algoritmo vecino más cercano}}
+
+
+
+}
+
+\subsection{Prototipo 3}
+
+\frame{\frametitle{\textcolor{black}{Algoritmo vecino más cercano}}
+
+
+
+}
+
+
+
+\section{Software de control}
+
+
+\frame{\frametitle{\textcolor{black}{Surveyor Robot Software}}
+
+
+
+}
+
+
+
+\section{Interfaz}
+
+\frame{\frametitle{\textcolor{black}{Interfaz}}
+
+
+
+}
+
+
+
+\section{Conclusiones}
+
+\frame{\frametitle{\textcolor{black}{Objetivos logrados}}
+
+Durante la realización del proyecto \emph{OpenTSR: Vehículo reconocedor de señales de tráfico} como trabajo de fin de carrera, he conseguido profundizar mi conocimiento en los siguientes campos:
+
+\begin{itemize}
+\item Ampliación de conocimientos sobre \LaTeX.
+\item Profundización sobre el lenguaje C y C++.
+\item Aprendizaje sobre programación por eventos.
+\item Diseño y creación de interfaces gráficas haciendo uso de la biblioteca Qt.
+\item Estudio de técnicas aplicables al procesamiento de imágenes.
+\item Estudio de técnicas y algoritmos propios del reconocimiento de patrones.
+\end{itemize}
+}
+
+
+
+\section{Referencias}
+
+\frame{\frametitle{\textcolor{black}{Referencias}}
+
+\begin{thebibliography}{8} 
+\beamertemplatebookbibitems 
+
+\end{thebibliography} 
+}
+
+
+\frame{\frametitle{\textcolor{black}{Final}}
+{
+\begin{center}
+\huge{¿Preguntas?}
+\begin{figure}[H]
+\href{http://ph03nyx.deviantart.com/}{\includegraphics[width=2cm]{preguntas.jpg}}
+\end{figure}
+\end{center}
+
+}
+}
+
+\end{document}

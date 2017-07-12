@@ -1,0 +1,83 @@
+\select@language {spanish}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Logo OpenTSR \footnotemark .\relax }}{2}{figure.caption.9}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Componentes b\IeC {\'a}sicos de un sistema de reconocimiento de patrones.\relax }}{7}{figure.caption.10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Modelo de color RGB.\relax }}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Espacio de color HSV.\relax }}{9}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Modelo de color CMYK.\relax }}{11}{figure.caption.16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Logotipo de OpenCV\relax }}{14}{figure.caption.17}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Logotipo de Qt\relax }}{14}{figure.caption.18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Logotipo de SDL\relax }}{15}{figure.caption.19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Logotipo de Qt Creator\relax }}{15}{figure.caption.20}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Imagen de los diferentes elementos hardware empleados.\relax }}{16}{figure.caption.21}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Imagen del veh\IeC {\'\i }culo SRV-1\relax }}{17}{figure.caption.22}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Imagen del router empleado.\relax }}{20}{figure.caption.26}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Imagen de la capturadora o conversor anal\IeC {\'o}gico/digital.\relax }}{21}{figure.caption.28}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Imagen de la c\IeC {\'a}mara y el receptor inal\IeC {\'a}mbricos.\relax }}{22}{figure.caption.30}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Imagen del gamepad USB utilizado.\relax }}{22}{figure.caption.31}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Descomposici\IeC {\'o}n de las tareas implicadas en el desarrollo del proyecto.\relax }}{24}{figure.caption.32}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Gantt 1. Desarrollo del proyecto.\relax }}{25}{figure.caption.33}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama de Gantt 2. Desarrollo del proyecto.\relax }}{26}{figure.caption.34}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama de Gantt 3. Desarrollo del proyecto.\relax }}{27}{figure.caption.35}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Veh\IeC {\'\i }culo SRV-1 tras el montaje de la c\IeC {\'a}mara.\relax }}{29}{figure.caption.36}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Esquema del sistema de recepci\IeC {\'o}n de im\IeC {\'a}genes desde la c\IeC {\'a}mara al ordenador.\relax }}{30}{figure.caption.37}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Visi\IeC {\'o}n del sistema de recepci\IeC {\'o}n de im\IeC {\'a}genes montado a falta de la conexi\IeC {\'o}n a corriente del receptor.\relax }}{31}{figure.caption.38}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comunicaciones v\IeC {\'\i }a Wi-Fi entre el ordenador y el veh\IeC {\'\i }culo rob\IeC {\'o}tico mediante un router.\relax }}{32}{figure.caption.39}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Vista del sistema de comunicaciones entre el veh\IeC {\'\i }culo y el ordenador.\relax }}{32}{figure.caption.40}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Subsistemas existentes en el proyecto junto con el modelo de ciclo de vida utilizado para su desarrollo.\relax }}{34}{figure.caption.41}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Diagrama de casos de uso.\relax }}{36}{figure.caption.42}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Conjunto de se\IeC {\~n}ales de tr\IeC {\'a}fico detectables por el sistema.\relax }}{43}{figure.caption.54}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Interpretaci\IeC {\'o}n de una imagen por parte de una c\IeC {\'a}mara\relax }}{44}{figure.caption.55}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Posible imagen de entrada al sistema.\relax }}{46}{figure.caption.56}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Programa elaborado para la obtenci\IeC {\'o}n de los valores del p\IeC {\'\i }xel pulsado.\relax }}{47}{figure.caption.58}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Resultado de aplicar una selecci\IeC {\'o}n por color sobre una imagen.\relax }}{51}{figure.caption.59}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Imagen con una regi\IeC {\'o}n definida de inter\IeC {\'e}s.\relax }}{52}{figure.caption.61}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Copia de una imagen mediante el uso de m\IeC {\'a}scaras.\relax }}{53}{figure.caption.62}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Matrices de entrada y de salida para la t\IeC {\'e}cnica de comparaci\IeC {\'o}n de plantillas.\relax }}{55}{figure.caption.63}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces El valor de cada p\IeC {\'\i }xel de la posici\IeC {\'o}n $(x,y)$ es procesado para obtener su caracter\IeC {\'\i }stica de similitud entre la plantilla y el rect\IeC {\'a}ngulo resultante de tomar $(x,y)$ como p\IeC {\'\i }xel situado en la esquina superior izquierda.\relax }}{55}{figure.caption.64}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Vista de la se\IeC {\~n}al detectada en la imagen.\relax }}{57}{figure.caption.65}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Programa elaborado para la obtenci\IeC {\'o}n de los valores del p\IeC {\'\i }xel pulsado.\relax }}{59}{figure.caption.67}
+\contentsline {figure}{\numberline {7.12}{\ignorespaces F\IeC {\'o}rmula para el c\IeC {\'a}lculo del \IeC {\'a}ngulo entre dos vectores.\relax }}{63}{figure.caption.70}
+\contentsline {figure}{\numberline {7.13}{\ignorespaces Vector de caracter\IeC {\'\i }sticas de un elemento desconocido.\relax }}{70}{figure.caption.72}
+\contentsline {figure}{\numberline {7.14}{\ignorespaces F\IeC {\'o}rmula para el c\IeC {\'a}lculo de la distancia eucl\IeC {\'\i }dea, definida como la ra\IeC {\'\i }z cuadrada de las sumas de las diferencias de cada una de las componentes del vector al cuadrado.\relax }}{70}{figure.caption.73}
+\contentsline {figure}{\numberline {7.15}{\ignorespaces Proceso seguido para la extracci\IeC {\'o}n de los objetos interiores de una se\IeC {\~n}al.\relax }}{73}{figure.caption.76}
+\contentsline {figure}{\numberline {7.16}{\ignorespaces Representaci\IeC {\'o}n del n\IeC {\'u}mero cinco en una matriz.\relax }}{73}{figure.caption.77}
+\contentsline {figure}{\numberline {7.17}{\ignorespaces Resultado de la transformaci\IeC {\'o}n de la matriz $V_1$ en vector columna a\IeC {\~n}adiendo las diferentes columnas de $V_1$ sucesivamente una bajo la otra en $V_2$. El vector resultante posee en la primera posici\IeC {\'o}n el identificador de la clase, en el caso mostrado el car\IeC {\'a}cter ``5''.\relax }}{74}{figure.caption.78}
+\contentsline {figure}{\numberline {7.18}{\ignorespaces Identificaci\IeC {\'o}n de los elementos interiores de la se\IeC {\~n}al, el valor ``5'' y el valor ``0'', determin\IeC {\'a}ndose el objeto como una se\IeC {\~n}al de 50 km/h.\relax }}{75}{figure.caption.79}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Visualizaci\IeC {\'o}n del chasis del robot y su sistema de desplazamiento tipo tanque.\relax }}{78}{figure.caption.80}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Representaci\IeC {\'o}n del funcionamiento del buffer creado para la captura de eventos m\IeC {\'u}ltiples.\relax }}{79}{figure.caption.81}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Fotograf\IeC {\'\i }a de un circuito realizable por el veh\IeC {\'\i }culo .\relax }}{81}{figure.caption.82}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Vista de la ventana principal.\relax }}{88}{figure.caption.83}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Vista de la ventana de informaci\IeC {\'o}n.\relax }}{88}{figure.caption.84}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Ventana principal de la aplicaci\IeC {\'o}n.\relax }}{90}{figure.caption.85}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Ventana donde se visualiza la informaci\IeC {\'o}n relacionada con OpenTSR.\relax }}{97}{figure.caption.93}
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Vista de los elementos conectados.\relax }}{100}{figure.caption.96}
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Interruptor para b\IeC {\'u}squeda del canal de la c\IeC {\'a}mara.\relax }}{100}{figure.caption.97}
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Vista de OpenTSR en funcionamiento.\relax }}{101}{figure.caption.98}
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Localizaci\IeC {\'o}n del interruptor con tres modos de funcionamiento del robot SRV-1.\relax }}{101}{figure.caption.99}
+\contentsline {figure}{\numberline {10.7}{\ignorespaces Imagen de la placa de configuraci\IeC {\'o}n.\relax }}{103}{figure.caption.100}
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Conexi\IeC {\'o}n de la placa al SRV-1.\relax }}{104}{figure.caption.101}
+\contentsline {figure}{\numberline {10.9}{\ignorespaces Men\IeC {\'u} de configuraci\IeC {\'o}n del Matchport.\relax }}{104}{figure.caption.102}
+\contentsline {figure}{\numberline {10.10}{\ignorespaces Adaptador de corriente para realizar cargas de bater\IeC {\'\i }a en el robot SRV-1.\relax }}{106}{figure.caption.103}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {11.1}{\ignorespaces Pasos para la elaboraci\IeC {\'o}n de la matriz modelos.\relax }}{110}{figure.caption.106}
+\contentsline {figure}{\numberline {11.2}{\ignorespaces Comunicaciones v\IeC {\'\i }a WiFi entre el ordenador y el veh\IeC {\'\i }culo rob\IeC {\'o}tico mediante un router.\relax }}{111}{figure.caption.107}
+\contentsline {figure}{\numberline {11.3}{\ignorespaces Elementos implicados en la transmisi\IeC {\'o}n de im\IeC {\'a}genes desde la c\IeC {\'a}mara hasta el ordenador.\relax }}{112}{figure.caption.108}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4}{\ignorespaces Chequeo de la configuraci\IeC {\'o}n de OpenCV.\relax }}{116}{figure.caption.110}
+\contentsline {figure}{\numberline {5}{\ignorespaces Salida producida tras la ejecuci\IeC {\'o}n del programa de ejemplo.\relax }}{118}{figure.caption.111}
+\contentsline {figure}{\numberline {6}{\ignorespaces Ventana de bienvenida del instalador.\relax }}{119}{figure.caption.112}
+\contentsline {figure}{\numberline {7}{\ignorespaces Solicitud de directorio para la instalaci\IeC {\'o}n.\relax }}{119}{figure.caption.113}
+\contentsline {figure}{\numberline {8}{\ignorespaces Ventana para la visualizaci\IeC {\'o}n de los t\IeC {\'e}rminos de licencia.\relax }}{120}{figure.caption.114}
+\contentsline {figure}{\numberline {9}{\ignorespaces Ventana de comienzo de instalaci\IeC {\'o}n.\relax }}{120}{figure.caption.115}
+\contentsline {figure}{\numberline {10}{\ignorespaces Proceso de instalaci\IeC {\'o}n de Qt SDK.\relax }}{121}{figure.caption.116}
+\contentsline {figure}{\numberline {11}{\ignorespaces Proceso de instalaci\IeC {\'o}n finalizado.\relax }}{121}{figure.caption.117}

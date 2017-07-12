@@ -1,0 +1,136 @@
+
+\documentclass{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[utf-8]{inputenc}
+
+
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\def\PY@tok@gd{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\def\PY@tok@gu{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\def\PY@tok@gt{\def\PY@tc##1{\textcolor[rgb]{0.00,0.25,0.82}{##1}}}
+\def\PY@tok@gs{\let\PY@bf=\textbf}
+\def\PY@tok@gr{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\def\PY@tok@cm{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@vg{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@m{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@cs{\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}\def\PY@bc##1{\colorbox[rgb]{1.00,0.94,0.94}{##1}}}
+\def\PY@tok@ge{\let\PY@it=\textit}
+\def\PY@tok@vc{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@il{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@go{\def\PY@tc##1{\textcolor[rgb]{0.50,0.50,0.50}{##1}}}
+\def\PY@tok@cp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@gi{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\def\PY@tok@gh{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\def\PY@tok@ni{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.84,0.33,0.22}{##1}}}
+\def\PY@tok@nl{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.13,0.44}{##1}}}
+\def\PY@tok@nn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@no{\def\PY@tc##1{\textcolor[rgb]{0.38,0.68,0.84}{##1}}}
+\def\PY@tok@na{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@nb{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@nd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.33,0.33,0.33}{##1}}}
+\def\PY@tok@ne{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nf{\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.49}{##1}}}
+\def\PY@tok@si{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.44,0.63,0.82}{##1}}}
+\def\PY@tok@s2{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@vi{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@nt{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.45}{##1}}}
+\def\PY@tok@nv{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@s1{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@gp{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@sh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@ow{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@sx{\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@bp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c1{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@kc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@mf{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@err{\def\PY@bc##1{\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{##1}}}
+\def\PY@tok@kd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@ss{\def\PY@tc##1{\textcolor[rgb]{0.32,0.47,0.09}{##1}}}
+\def\PY@tok@sr{\def\PY@tc##1{\textcolor[rgb]{0.14,0.33,0.53}{##1}}}
+\def\PY@tok@mo{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mi{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@kn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@o{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\def\PY@tok@kr{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@s{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@kp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@w{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\def\PY@tok@kt{\def\PY@tc##1{\textcolor[rgb]{0.56,0.13,0.00}{##1}}}
+\def\PY@tok@sc{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sb{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@k{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@se{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sd{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+\begin{document}
+
+\section*{}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{// ALGORITMO DE IDENTIFICACIÓN}
+
+\PY{c+c1}{// Carga de imagen referencia o plantilla.}
+\PY{n}{tpl} \PY{o}{=} \PY{n}{cvLoadImage}\PY{p}{(} \PY{n}{directorio}\PY{p}{,} \PY{n}{CV\PYZus{}LOAD\PYZus{}IMAGE\PYZus{}COLOR} \PY{p}{)}\PY{p}{;}
+
+\PY{c+c1}{// Cáculo de ancho y alto de la imagen resultado.}
+\PY{n}{width}  \PY{o}{=} \PY{n}{identificar}\PY{o}{-}\PY{o}{>}\PY{n}{width}  \PY{o}{-} \PY{n}{tpl}\PY{o}{-}\PY{o}{>}\PY{n}{width} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{;}
+\PY{n}{height} \PY{o}{=} \PY{n}{identificar}\PY{o}{-}\PY{o}{>}\PY{n}{height} \PY{o}{-} \PY{n}{tpl}\PY{o}{-}\PY{o}{>}\PY{n}{height} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{;}
+
+\PY{c+c1}{// Se crea la imagen donde se almacenará el resultado de la comparación.}
+\PY{n}{res} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvSize}\PY{p}{(} \PY{n}{width}\PY{p}{,} \PY{n}{height} \PY{p}{)}\PY{p}{,} \PY{n}{IPL\PYZus{}DEPTH\PYZus{}32F}\PY{p}{,} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{;}
+
+\PY{c+c1}{// Se realiza la comparación:}
+\PY{n}{cvMatchTemplate}\PY{p}{(}\PY{n}{identificar}\PY{p}{,} \PY{n}{tpl}\PY{p}{,} \PY{n}{res}\PY{p}{,} \PY{n}{CV\PYZus{}TM\PYZus{}SQDIFF\PYZus{}NORMED}\PY{p}{)}\PY{p}{;}
+
+\PY{k}{for}\PY{p}{(} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0} \PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{n}{height} \PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for}\PY{p}{(} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0} \PY{p}{;} \PY{n}{j} \PY{o}{<} \PY{n}{width} \PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+
+    \PY{c+c1}{// sacamos el elemento:}
+    \PY{n}{s} \PY{o}{=} \PY{n}{cvGet2D}\PY{p}{(} \PY{n}{res}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{j} \PY{p}{)}\PY{p}{;}
+    
+    \PY{c+c1}{// Si el valor se localiza entre el rango establecido...}
+    \PY{k}{if}\PY{p}{(} \PY{n}{s}\PY{p}{.}\PY{n}{val}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{<}\PY{o}{=} \PY{n}{umbral} \PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{c+c1}{// Dibujamos el contorno al objeto identificado ENCONTRADO!}
+      \PY{n}{fprintf}\PY{p}{(} \PY{n}{stderr}\PY{p}{,} \PY{l+s}{"}\PY{l+s}{¡50 m/h!}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+      
+      \PY{n}{pt1}\PY{p}{.}\PY{n}{x} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{x}\PY{p}{;}
+      \PY{n}{pt1}\PY{p}{.}\PY{n}{y} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{y}\PY{p}{;}
+      \PY{n}{pt2}\PY{p}{.}\PY{n}{x} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{x} \PY{o}{+} \PY{n}{rect}\PY{p}{.}\PY{n}{width}\PY{p}{;}
+      \PY{n}{pt2}\PY{p}{.}\PY{n}{y} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{y} \PY{o}{+} \PY{n}{rect}\PY{p}{.}\PY{n}{height}\PY{p}{;}
+      
+      \PY{c+c1}{// Se dibuja el rectángulo que encierra al objeto.}
+      \PY{n}{cvRectangle}\PY{p}{(}\PY{n}{img}\PY{p}{,}\PY{n}{pt1}\PY{p}{,}\PY{n}{pt2}\PY{p}{,}\PY{n}{CV\PYZus{}RGB}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+  \PY{p}{\PYZcb{}}
+ \PY{p}{\PYZcb{}}
+\end{Verbatim}
+
+\end{document}

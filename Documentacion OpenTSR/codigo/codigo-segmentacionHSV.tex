@@ -1,0 +1,72 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{IplImage}\PY{o}{*} \PY{n}{seleccion\PYZus{}colorHSV}\PY{p}{(}\PY{n}{IplImage}\PY{o}{*} \PY{n}{img} \PY{p}{)}\PY{p}{\PYZob{}}
+
+  \PY{c+c1}{// Declaración de variables}
+  \PY{n}{IplImage} \PY{o}{*}\PY{n}{hsv\PYZus{}Image}\PY{p}{,} \PY{o}{*}\PY{n}{mono\PYZus{}Image}\PY{p}{;}
+  \PY{k+kt}{int} \PY{n}{height} \PY{p}{,} \PY{n}{width} \PY{p}{,} \PY{n}{step} \PY{p}{,} \PY{n}{channels}\PY{p}{;}
+  \PY{k+kt}{int} \PY{n}{step\PYZus{}mono} \PY{p}{,} \PY{n}{channels\PYZus{}mono}\PY{p}{;}  
+  \PY{n}{uchar} \PY{o}{*}\PY{n}{data\PYZus{}hsv} \PY{p}{,} \PY{o}{*}\PY{n}{data\PYZus{}mono}\PY{p}{;}
+
+
+  \PY{c+c1}{// Declaración de los valores umbral.}
+  \PY{k+kt}{int} \PY{n}{hupper}\PY{o}{=}\PY{l+m+mi}{175}\PY{p}{,}\PY{n}{hlower}\PY{o}{=}\PY{l+m+mi}{110}\PY{p}{,}\PY{n}{Saturation}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{,}\PY{n}{Brightness}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{,}\PY{n}{Erode}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{Dilate}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{;}
+
+  \PY{k+kt}{int} \PY{n}{hupper2}\PY{o}{=}\PY{l+m+mi}{35}\PY{p}{,}\PY{n}{hlower2}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{Saturation2}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{,}\PY{n}{Brightness2}\PY{o}{=}\PY{l+m+mi}{60}\PY{p}{,}\PY{n}{Erode2}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{Dilate2}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{;}   
+  \PY{c+c1}{//}
+
+  \PY{c+c1}{// Se crean dos imágenes del tamaño de la imagen fuente.}
+  \PY{n}{hsv\PYZus{}Image} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvGetSize}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{3} \PY{p}{)}\PY{p}{;}
+  \PY{n}{mono\PYZus{}Image} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvGetSize}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{;}
+  \PY{c+c1}{// Se inicializan a cero.}
+  \PY{n}{cvZero}\PY{p}{(}\PY{n}{hsv\PYZus{}Image}\PY{p}{)}\PY{p}{;}
+  \PY{n}{cvZero}\PY{p}{(}\PY{n}{mono\PYZus{}Image}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Obtenemos atributos de la imagen HSV.}
+  \PY{n}{height}     \PY{o}{=} \PY{n}{hsv\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{height}\PY{p}{;}
+  \PY{n}{width}      \PY{o}{=} \PY{n}{hsv\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{width}\PY{p}{;}
+  \PY{n}{step}       \PY{o}{=} \PY{n}{hsv\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{widthStep}\PY{o}{/}\PY{k}{sizeof}\PY{p}{(}\PY{n}{uchar}\PY{p}{)}\PY{p}{;}
+  \PY{n}{channels}   \PY{o}{=} \PY{n}{hsv\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{nChannels}\PY{p}{;}
+  \PY{n}{step\PYZus{}mono}   \PY{o}{=} \PY{n}{mono\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{widthStep}\PY{o}{/}\PY{k}{sizeof}\PY{p}{(}\PY{n}{uchar}\PY{p}{)}\PY{p}{;}
+  \PY{n}{channels\PYZus{}mono} \PY{o}{=} \PY{n}{mono\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{nChannels}\PY{p}{;}
+
+  \PY{c+c1}{// Convertimos imagen de entrada de RGB a HSV.}
+  \PY{n}{cvCvtColor}\PY{p}{(}\PY{n}{img}\PY{p}{,}\PY{n}{hsv\PYZus{}Image}\PY{p}{,}\PY{n}{CV\PYZus{}RGB2HSV}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Obtenemos los valores RGB de la Imagen.}
+  \PY{n}{data\PYZus{}hsv} \PY{o}{=} \PY{p}{(}\PY{n}{uchar} \PY{o}{*}\PY{p}{)}\PY{n}{hsv\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{imageData}\PY{p}{;}
+  \PY{n}{data\PYZus{}mono} \PY{o}{=} \PY{p}{(}\PY{n}{uchar} \PY{o}{*}\PY{p}{)}\PY{n}{mono\PYZus{}Image}\PY{o}{-}\PY{o}{>}\PY{n}{imageData}\PY{p}{;}
+
+  \PY{c+c1}{//Recorremos la imagen.}
+  \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{<}\PY{n}{height}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+} \PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{<}\PY{n}{width}\PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+} \PY{p}{)} \PY{p}{\PYZob{}}
+
+        \PY{c+c1}{// Segmentamos la imagen mediante los valores umbrales }
+        \PY{c+c1}{// correspondientes al color rojo y azul.}
+        \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{p}{]}\PY{p}{)}\PY{o}{>}\PY{o}{=} \PY{n}{hlower}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+            \PY{p}{(}\PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{p}{]}\PY{p}{)} \PY{o}{<}\PY{o}{=} \PY{n}{hupper}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+            \PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{>}\PY{o}{=} \PY{n}{Saturation} \PY{p}{)} \PY{o}{&}\PY{o}{&} 
+            \PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{>}\PY{o}{=} \PY{n}{Brightness}\PY{p}{)} \PY{o}{|}\PY{o}{|} 
+            \PY{p}{(}\PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{p}{]}\PY{p}{)}\PY{o}{>}\PY{o}{=} \PY{n}{hlower2}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+            \PY{p}{(}\PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{p}{]}\PY{p}{)} \PY{o}{<}\PY{o}{=} \PY{n}{hupper2}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+            \PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]}\PY{o}{>}\PY{o}{=} \PY{n}{Saturation2} \PY{p}{)} \PY{o}{&}\PY{o}{&} 
+            \PY{p}{(}\PY{n}{data\PYZus{}hsv}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{>}\PY{o}{=} \PY{n}{Brightness2}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+             \PY{c+c1}{// Coloreamos el píxel deseado en la }
+             \PY{c+c1}{// imagen de salida.}
+             \PY{n}{data\PYZus{}mono}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{step\PYZus{}mono}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{channels\PYZus{}mono}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+  \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{// Se aplica una erosión y una dilatación,}
+  \PY{c+c1}{// para la eliminacion de píxeles sueltos.}
+  \PY{n}{cvErode}\PY{p}{(}\PY{n}{mono\PYZus{}Image}\PY{p}{,}\PY{n}{mono\PYZus{}Image}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{Erode}\PY{p}{)}\PY{p}{;}
+  \PY{n}{cvDilate}\PY{p}{(} \PY{n}{mono\PYZus{}Image}\PY{p}{,}\PY{n}{mono\PYZus{}Image}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{Dilate}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Eliminación de estructuras innecesarias.}
+  \PY{n}{cvReleaseImage}\PY{p}{(}\PY{o}{&}\PY{n}{hsv\PYZus{}Image}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Devolución de la imagen de salida.}
+  \PY{k}{return} \PY{n}{mono\PYZus{}Image}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

@@ -1,0 +1,93 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{//Localiza la forma de la figura a partir de un polígono.}
+
+\PY{k+kt}{int} \PY{n}{tipo\PYZus{}figura}\PY{p}{(}\PY{n}{CvSeq}\PY{o}{*} \PY{n}{result}\PY{p}{,}\PY{n}{IplImage}\PY{o}{*} \PY{n}{plantilla}\PY{p}{)}\PY{p}{\PYZob{}}  
+
+  \PY{k+kt}{double} \PY{n}{PI} \PY{o}{=} \PY{l+m+mf}{3.1415}\PY{p}{;}
+
+  \PY{k+kt}{double} \PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{,}\PY{n}{C}\PY{p}{,}\PY{n}{D}\PY{p}{,}\PY{n}{E}\PY{p}{,}\PY{n}{F}\PY{p}{,}\PY{n}{G}\PY{p}{,}\PY{n}{H}\PY{p}{;}
+
+  \PY{c+c1}{// CUADRADO, cuatro vértices, área superior a 1000 }
+  \PY{c+c1}{// y estructura convexa. En un conjunto convexo se puede ir}
+  \PY{c+c1}{// de cualquier punto a cualquier otro en vía recta, sin salir del mismo.}
+  \PY{c+c1}{// Formalmente: para todo (A,B) pertenece a C ->  [A,B] pertenece a C.}
+  \PY{k}{if}\PY{p}{(}\PY{n}{result}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{o}{=}\PY{o}{=}\PY{l+m+mi}{4} \PY{o}{&}\PY{o}{&} \PY{n}{fabs}\PY{p}{(}\PY{n}{cvContourArea}\PY{p}{(}\PY{n}{result}\PY{p}{,}\PY{n}{CV\PYZus{}WHOLE\PYZus{}SEQ}\PY{p}{)}\PY{p}{)}
+   \PY{o}{>} \PY{l+m+mi}{1000} \PY{o}{&}\PY{o}{&} \PY{n}{cvCheckContourConvexity}\PY{p}{(}\PY{n}{result}\PY{p}{)}\PY{p}{)}  
+    \PY{p}{\PYZob{}}
+      \PY{n}{CvPoint} \PY{o}{*}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{;}
+
+      \PY{c+c1}{// Extraemos los puntos de los vértices.}
+      \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{l+m+mi}{4}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{n}{pt}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{CvPoint}\PY{o}{*}\PY{p}{)}\PY{n}{cvGetSeqElem}\PY{p}{(}\PY{n}{result}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+
+      \PY{c+c1}{// Procedemos a calcular el ángulo de los 4 vértices }
+      \PY{c+c1}{// (condición: 90 grados cada uno).}
+      \PY{n}{A} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;} 
+      \PY{n}{B} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{C} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;} 
+      \PY{n}{D} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+
+      \PY{k}{if}\PY{p}{(} \PY{n}{A} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{A} \PY{o}{>} \PY{l+m+mi}{88} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{>} \PY{l+m+mi}{88} \PY{o}{&}\PY{o}{&}  \PY{n}{C} \PY{o}{<} \PY{l+m+mi}{92} 
+          \PY{o}{&}\PY{o}{&} \PY{n}{C} \PY{o}{>} \PY{l+m+mi}{88} \PY{o}{&}\PY{o}{&}  \PY{n}{D} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{D} \PY{o}{>} \PY{l+m+mi}{88} \PY{p}{)}\PY{p}{\PYZob{}} 
+	\PY{c+c1}{// Cuadrado detectado.}
+	\PY{k}{return} \PY{l+m+mi}{4}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{// OCTÓGONO}
+  \PY{k}{if}\PY{p}{(}\PY{n}{result}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{o}{=}\PY{o}{=}\PY{l+m+mi}{8} \PY{o}{&}\PY{o}{&} \PY{n}{fabs}\PY{p}{(}\PY{n}{cvContourArea}\PY{p}{(}\PY{n}{result}\PY{p}{,}\PY{n}{CV\PYZus{}WHOLE\PYZus{}SEQ}\PY{p}{)}\PY{p}{)}
+   \PY{o}{>} \PY{l+m+mi}{1000} \PY{o}{&}\PY{o}{&} \PY{n}{cvCheckContourConvexity}\PY{p}{(}\PY{n}{result}\PY{p}{)}\PY{p}{)} 
+    \PY{p}{\PYZob{}}
+
+      \PY{c+c1}{// Extraemos los puntos de los vértices}
+      \PY{n}{CvPoint} \PY{o}{*}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{;}
+      \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{l+m+mi}{8}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{n}{pt}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{CvPoint}\PY{o}{*}\PY{p}{)}\PY{n}{cvGetSeqElem}\PY{p}{(}\PY{n}{result}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+
+      \PY{n}{A} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;} 
+      \PY{n}{B} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{C} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;} 
+      \PY{n}{D} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{E} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{F} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{G} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{H} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+
+      \PY{k}{if}\PY{p}{(} \PY{n}{A} \PY{o}{<} \PY{l+m+mi}{47} \PY{o}{&}\PY{o}{&} \PY{n}{A} \PY{o}{>} \PY{l+m+mi}{43} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{<} \PY{l+m+mi}{47} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{>} \PY{l+m+mi}{43}
+          \PY{o}{&}\PY{o}{&}  \PY{n}{C} \PY{o}{<} \PY{l+m+mi}{47} \PY{o}{&}\PY{o}{&} \PY{n}{C} \PY{o}{>} \PY{l+m+mi}{43} \PY{o}{&}\PY{o}{&}  \PY{n}{D} \PY{o}{<} \PY{l+m+mi}{47} \PY{o}{&}\PY{o}{&}
+          \PY{n}{D} \PY{o}{>} \PY{l+m+mi}{43} \PY{o}{&}\PY{o}{&} \PY{n}{E} \PY{o}{<} \PY{l+m+mi}{47} \PY{o}{&}\PY{o}{&} \PY{n}{E} \PY{o}{>} \PY{l+m+mi}{43} \PY{o}{&}\PY{o}{&}  \PY{n}{F} \PY{o}{<} \PY{l+m+mi}{47}
+          \PY{o}{&}\PY{o}{&} \PY{n}{F} \PY{o}{>} \PY{l+m+mi}{43} \PY{o}{&}\PY{o}{&} \PY{n}{G} \PY{o}{<} \PY{l+m+mi}{7} \PY{o}{&}\PY{o}{&} \PY{n}{G} \PY{o}{>} \PY{l+m+mi}{43} \PY{o}{&}\PY{o}{&} \PY{n}{H} \PY{o}{<} \PY{l+m+mi}{47}
+          \PY{o}{&}\PY{o}{&} \PY{n}{H} \PY{o}{>} \PY{l+m+mi}{43}\PY{p}{)}\PY{p}{\PYZob{}} 
+
+	\PY{c+c1}{// Octógono detectado.}
+	\PY{k}{return} \PY{l+m+mi}{8}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+	   
+    \PY{p}{\PYZcb{}} 
+         
+  \PY{c+c1}{// TRIANGULO}
+  \PY{k}{if}\PY{p}{(}\PY{n}{result}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{o}{=}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)} 
+    \PY{p}{\PYZob{}}
+
+      \PY{c+c1}{// Extraemos los puntos de los vértices		  }
+      \PY{n}{CvPoint} \PY{o}{*}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{;}
+      \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{l+m+mi}{3}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{n}{pt}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{CvPoint}\PY{o}{*}\PY{p}{)}\PY{n}{cvGetSeqElem}\PY{p}{(}\PY{n}{result}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+
+      \PY{n}{A} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{B} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;}
+      \PY{n}{C} \PY{o}{=} \PY{p}{(}\PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{180}\PY{p}{)}\PY{o}{/} \PY{n}{PI}\PY{p}{;} 
+
+      \PY{k}{if}\PY{p}{(} \PY{n}{A} \PY{o}{<} \PY{l+m+mi}{126} \PY{o}{&}\PY{o}{&} \PY{n}{A} \PY{o}{>} \PY{l+m+mi}{115} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{<} \PY{l+m+mi}{126} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{>} \PY{l+m+mi}{115} \PY{o}{&}\PY{o}{&}
+          \PY{n}{C} \PY{o}{<} \PY{l+m+mi}{126} \PY{o}{&}\PY{o}{&} \PY{n}{C} \PY{o}{>} \PY{l+m+mi}{115} \PY{p}{)}\PY{p}{\PYZob{}} 
+	\PY{c+c1}{// Triángulo detectado.}
+	\PY{k}{return} \PY{l+m+mi}{3}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+	  
+    \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{// Forma no identificada.}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+

@@ -1,0 +1,98 @@
+\BOOKMARK [0][-]{section*.4}{\315ndice general}{}
+\BOOKMARK [0][-]{section*.6}{\315ndice de figuras}{}
+\BOOKMARK [0][-]{section*.8}{\315ndice de tablas}{}
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}
+\BOOKMARK [1][-]{section.1.1}{Introducci\363n y antecedentes}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Objetivos}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{Acerca de este documento}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Conceptos b\341sicos}{}
+\BOOKMARK [1][-]{section.2.1}{Veh\355culo Aut\363nomo}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{Inteligencia artificial}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{Visi\363n artificial}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{Reconocimiento de patrones}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.4.1}{Aplicaciones}{section.2.4}
+\BOOKMARK [1][-]{section.2.5}{Modelos de color}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.5.1}{Modelo RGB}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.2}{Modelo HSV}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.3}{Uso}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.4}{Caracter\355sticas}{section.2.5}
+\BOOKMARK [2][-]{subsection.2.5.5}{Modelo CYMK}{section.2.5}
+\BOOKMARK [0][-]{chapter.3}{Herramientas utilizadas}{}
+\BOOKMARK [1][-]{section.3.1}{Herramientas software}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.1.1}{Licencia}{section.3.1}
+\BOOKMARK [1][-]{section.3.2}{Herramientas hardware}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.2.1}{Veh\355culo SRV-1}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.2}{Router}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.3}{C\341mara, receptor inal\341mbrico y capturadora de v\355deo}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.4}{Gamepad}{section.3.2}
+\BOOKMARK [2][-]{subsection.3.2.5}{Ordenador}{section.3.2}
+\BOOKMARK [0][-]{chapter.4}{Organizaci\363n temporal}{}
+\BOOKMARK [0][-]{chapter.5}{Montaje hardware}{}
+\BOOKMARK [1][-]{section.5.1}{Colocaci\363n de la c\341mara en el veh\355culo}{chapter.5}
+\BOOKMARK [1][-]{section.5.2}{Conexi\363n c\341mara - PC}{chapter.5}
+\BOOKMARK [1][-]{section.5.3}{Comunicaciones veh\355culo - PC}{chapter.5}
+\BOOKMARK [0][-]{chapter.6}{Desarrollo software}{}
+\BOOKMARK [1][-]{section.6.1}{Metodolog\355a de desarrollo}{chapter.6}
+\BOOKMARK [1][-]{section.6.2}{Recolecci\363n de requisitos}{chapter.6}
+\BOOKMARK [2][-]{subsection.6.2.1}{Requisitos funcionales}{section.6.2}
+\BOOKMARK [2][-]{subsection.6.2.2}{Diagramas de casos de uso}{section.6.2}
+\BOOKMARK [2][-]{subsection.6.2.3}{Especificaci\363n de los casos de uso}{section.6.2}
+\BOOKMARK [2][-]{subsection.6.2.4}{Desarrollo}{section.6.2}
+\BOOKMARK [0][-]{chapter.7}{Software de reconocimiento}{}
+\BOOKMARK [1][-]{section.7.1}{Primer prototipo}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.1.1}{Obtenci\363n de la imagen}{section.7.1}
+\BOOKMARK [2][-]{subsection.7.1.2}{Extracci\363n de caracter\355sticas}{section.7.1}
+\BOOKMARK [2][-]{subsection.7.1.3}{Template matching}{section.7.1}
+\BOOKMARK [2][-]{subsection.7.1.4}{Problemas detectados}{section.7.1}
+\BOOKMARK [1][-]{section.7.2}{Segundo prototipo}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.2.1}{Extracci\363n de caracter\355sticas}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.2}{Clasificaci\363n}{section.7.2}
+\BOOKMARK [2][-]{subsection.7.2.3}{Problemas detectados}{section.7.2}
+\BOOKMARK [1][-]{section.7.3}{Tercer y \372ltimo prototipo}{chapter.7}
+\BOOKMARK [2][-]{subsection.7.3.1}{Extracci\363n de caracter\355sticas}{section.7.3}
+\BOOKMARK [2][-]{subsection.7.3.2}{Clasificaci\363n}{section.7.3}
+\BOOKMARK [0][-]{chapter.8}{Software de control}{}
+\BOOKMARK [1][-]{section.8.1}{Control por parte del usuario}{chapter.8}
+\BOOKMARK [2][-]{subsection.8.1.1}{Control desde teclado}{section.8.1}
+\BOOKMARK [2][-]{subsection.8.1.2}{Control mediante gamepad}{section.8.1}
+\BOOKMARK [1][-]{section.8.2}{Control autom\341tico}{chapter.8}
+\BOOKMARK [0][-]{chapter.9}{Interfaz gr\341fica}{}
+\BOOKMARK [1][-]{section.9.1}{Elementos de la interfaz gr\341fica}{chapter.9}
+\BOOKMARK [0][-]{chapter.10}{Gu\355a de usuario}{}
+\BOOKMARK [1][-]{section.10.1}{Introducci\363n}{chapter.10}
+\BOOKMARK [2][-]{subsection.10.1.1}{Objetivo de esta gu\355a}{section.10.1}
+\BOOKMARK [2][-]{subsection.10.1.2}{Dirigido a}{section.10.1}
+\BOOKMARK [1][-]{section.10.2}{Obtener OpenTSR}{chapter.10}
+\BOOKMARK [1][-]{section.10.3}{Ingreso al sistema}{chapter.10}
+\BOOKMARK [1][-]{section.10.4}{Convenciones y est\341ndares a utilizar}{chapter.10}
+\BOOKMARK [2][-]{subsection.10.4.1}{Convenciones del uso del teclado}{section.10.4}
+\BOOKMARK [1][-]{section.10.5}{Operaciones de la interfaz}{chapter.10}
+\BOOKMARK [1][-]{section.10.6}{Operaciones automatizadas}{chapter.10}
+\BOOKMARK [1][-]{section.10.7}{Montaje del sistema de comunicaciones}{chapter.10}
+\BOOKMARK [1][-]{section.10.8}{Configuraci\363n del router}{chapter.10}
+\BOOKMARK [1][-]{section.10.9}{Configuraci\363n del veh\355culo SRV-1}{chapter.10}
+\BOOKMARK [2][-]{subsection.10.9.1}{Configuraci\363n del MatchPort}{section.10.9}
+\BOOKMARK [2][-]{subsection.10.9.2}{Carga de bater\355a del veh\355culo SRV-1}{section.10.9}
+\BOOKMARK [1][-]{section.10.10}{Instalaci\363n de la capturadora}{chapter.10}
+\BOOKMARK [0][-]{chapter.11}{Comentarios finales}{}
+\BOOKMARK [1][-]{section.11.1}{Presupuesto}{chapter.11}
+\BOOKMARK [1][-]{section.11.2}{Conclusiones}{chapter.11}
+\BOOKMARK [1][-]{section.11.3}{Mejoras futuras}{chapter.11}
+\BOOKMARK [0][-]{appendix*.109}{Anexos}{}
+\BOOKMARK [1][-]{section..1}{Instalaci\363n de OpenCV}{appendix*.109}
+\BOOKMARK [1][-]{section..2}{Instalaci\363n Qt y Qt Creator}{appendix*.109}
+\BOOKMARK [1][-]{section..3}{Instalaci\363n de SDL}{appendix*.109}
+\BOOKMARK [0][-]{section*.119}{Bibliograf\355a}{}
+\BOOKMARK [0][-]{section*.121}{GNU Free Documentation License}{}
+\BOOKMARK [1][-]{section*.122}{1. APPLICABILITY AND DEFINITIONS}{section*.121}
+\BOOKMARK [1][-]{section*.123}{2. VERBATIM COPYING}{section*.121}
+\BOOKMARK [1][-]{section*.124}{3. COPYING IN QUANTITY}{section*.121}
+\BOOKMARK [1][-]{section*.125}{4. MODIFICATIONS}{section*.121}
+\BOOKMARK [1][-]{section*.126}{5. COMBINING DOCUMENTS}{section*.121}
+\BOOKMARK [1][-]{section*.127}{6. COLLECTIONS OF DOCUMENTS}{section*.121}
+\BOOKMARK [1][-]{section*.128}{7. AGGREGATION WITH INDEPENDENT WORKS}{section*.121}
+\BOOKMARK [1][-]{section*.129}{8. TRANSLATION}{section*.121}
+\BOOKMARK [1][-]{section*.130}{9. TERMINATION}{section*.121}
+\BOOKMARK [1][-]{section*.131}{10. FUTURE REVISIONS OF THIS LICENSE}{section*.121}
+\BOOKMARK [1][-]{section*.132}{11. RELICENSING}{section*.121}
+\BOOKMARK [1][-]{section*.133}{ADDENDUM: How to use this License for your documents}{section*.121}

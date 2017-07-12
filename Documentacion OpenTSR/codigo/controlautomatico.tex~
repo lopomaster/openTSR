@@ -1,0 +1,312 @@
+
+\documentclass{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[utf-8]{inputenc}
+
+
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\def\PY@tok@gd{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\def\PY@tok@gu{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\def\PY@tok@gt{\def\PY@tc##1{\textcolor[rgb]{0.00,0.25,0.82}{##1}}}
+\def\PY@tok@gs{\let\PY@bf=\textbf}
+\def\PY@tok@gr{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\def\PY@tok@cm{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@vg{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@m{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@cs{\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}\def\PY@bc##1{\colorbox[rgb]{1.00,0.94,0.94}{##1}}}
+\def\PY@tok@ge{\let\PY@it=\textit}
+\def\PY@tok@vc{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@il{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@go{\def\PY@tc##1{\textcolor[rgb]{0.50,0.50,0.50}{##1}}}
+\def\PY@tok@cp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@gi{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\def\PY@tok@gh{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\def\PY@tok@ni{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.84,0.33,0.22}{##1}}}
+\def\PY@tok@nl{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.13,0.44}{##1}}}
+\def\PY@tok@nn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@no{\def\PY@tc##1{\textcolor[rgb]{0.38,0.68,0.84}{##1}}}
+\def\PY@tok@na{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@nb{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@nd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.33,0.33,0.33}{##1}}}
+\def\PY@tok@ne{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nf{\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.49}{##1}}}
+\def\PY@tok@si{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.44,0.63,0.82}{##1}}}
+\def\PY@tok@s2{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@vi{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@nt{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.45}{##1}}}
+\def\PY@tok@nv{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@s1{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@gp{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@sh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@ow{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@sx{\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@bp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c1{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@kc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@mf{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@err{\def\PY@bc##1{\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{##1}}}
+\def\PY@tok@kd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@ss{\def\PY@tc##1{\textcolor[rgb]{0.32,0.47,0.09}{##1}}}
+\def\PY@tok@sr{\def\PY@tc##1{\textcolor[rgb]{0.14,0.33,0.53}{##1}}}
+\def\PY@tok@mo{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mi{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@kn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@o{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\def\PY@tok@kr{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@s{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@kp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@w{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\def\PY@tok@kt{\def\PY@tc##1{\textcolor[rgb]{0.56,0.13,0.00}{##1}}}
+\def\PY@tok@sc{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sb{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@k{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@se{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sd{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+\begin{document}
+
+\section*{}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{int}  \PY{n}{MainWindow}\PY{o}{:}\PY{o}{:}\PY{n}{accion\PYZus{}SVR}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{vector}\PY{o}{<}\PY{k+kt}{char}\PY{o}{>} \PY{o}{&}\PY{n}{v}\PY{p}{)}\PY{p}{\PYZob{}}
+
+
+    \PY{c+c1}{// 100 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'1'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{c+c1}{// Se elimina un '0'.}
+        \PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{vector}\PY{o}{<}\PY{k+kt}{char}\PY{o}{>}\PY{o}{:}\PY{o}{:}\PY{n}{iterator} \PY{n}{pos} \PY{o}{=} \PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)}\PY{p}{;}
+        \PY{n}{v}\PY{p}{.}\PY{n}{erase}\PY{p}{(}\PY{n}{pos}\PY{p}{)}\PY{p}{;}
+
+        \PY{c+c1}{// Si existe otro cero...}
+        \PY{k}{if}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+            \PY{c+c1}{// 100 km/h}
+            \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{\PYZob{}}
+                \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;}
+                \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+                \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{100}\PY{p}{;}
+                \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+            \PY{p}{\PYZcb{}}
+            \PY{c+c1}{//Mostrar señal detectada}
+            \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{10.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+
+            \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+
+
+    \PY{c+c1}{// 20 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'2'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{2}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{20}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{2.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 30 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'3'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+       \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{3}\PY{p}{;}
+
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{30}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{3.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 40 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'4'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{4}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{4}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{40}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{4.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 50 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'5'}\PY{p}{)}\PY{o}{!}\PY{o}{=}\PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{5}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{50}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{5.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 60 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'6'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{6}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{60}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{6.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 70 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'7'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{7}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{7}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{70}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{7.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 80 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'8'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{8}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{8}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{80}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{8.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// 90 km/h}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'9'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'0'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{9}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{9}\PY{p}{;}
+
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad} \PY{o}{=} \PY{l+m+mi}{90}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{9.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+
+    \PY{c+c1}{// Stop}
+    \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'t'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)} \PY{o}{&}\PY{o}{&} 
+        \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'p'}\PY{p}{)} \PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{1.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+
+    \PY{c+c1}{// Derecha}
+    \PY{k}{if} \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'d'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{v}\PY{p}{.}\PY{n}{size}\PY{p}{(}\PY{p}{)} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{12}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{12}\PY{p}{;}
+
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{;}
+        \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{12.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// Izquierda}
+    \PY{k}{if} \PY{p}{(}\PY{n}{std}\PY{o}{:}\PY{o}{:}\PY{n}{find}\PY{p}{(}\PY{n}{v}\PY{p}{.}\PY{n}{begin}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)}\PY{p}{,}\PY{l+s+sc}{'i'}\PY{p}{)}\PY{o}{!}\PY{o}{=} \PY{n}{v}\PY{p}{.}\PY{n}{end}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{v}\PY{p}{.}\PY{n}{size}\PY{p}{(}\PY{p}{)} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{\PYZob{}}
+
+        \PY{k}{if}\PY{p}{(}\PY{n}{conectado} \PY{o}{&}\PY{o}{&} \PY{n}{ui}\PY{o}{-}\PY{o}{>}\PY{n}{checkBox\PYZus{}2}\PY{o}{-}\PY{o}{>}\PY{n}{isChecked}\PY{p}{(}\PY{p}{)} \PY{o}{&}\PY{o}{&} \PY{n}{ultima\PYZus{}senial} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{13}\PY{p}{)}\PY{p}{\PYZob{}}
+            \PY{n}{ultima\PYZus{}senial} \PY{o}{=} \PY{l+m+mi}{13}\PY{p}{;}
+
+            \PY{n}{robot}\PY{p}{.}\PY{n}{move}\PY{p}{(}\PY{n}{STOP}\PY{p}{)}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{;}
+            \PY{n}{robot}\PY{p}{.}\PY{n}{drive}\PY{p}{(}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{,}\PY{n}{this}\PY{o}{-}\PY{o}{>}\PY{n}{velocidad}\PY{p}{)}\PY{p}{;}
+        \PY{p}{\PYZcb{}}
+
+        \PY{c+c1}{//Mostrar señal detectada}
+        \PY{n}{mostrar\PYZus{}senial\PYZus{}detectada}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{13.jpg}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+
+        \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+
+    \PY{p}{\PYZcb{}}
+
+    \PY{k}{return} \PY{l+m+mi}{1}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+
+\end{document}

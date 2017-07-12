@@ -1,0 +1,19 @@
+# g++ `pkg-config opencv --cflags` pixel.c  -o pixel `pkg-config opencv --libs`
+
+CC= g++
+CFLAGS=-ansi -g
+INCPATH=-I/usr/local/include/opencv 
+LIBPATH=-L/usr/local/lib
+OPTIONS = -lcxcore -lcv -lhighgui -lcvaux -lml
+EXE = valida entrena
+OBJS =  
+
+entrena: entrena.cpp
+	g++ `pkg-config opencv --cflags` valida.cpp  -o valida `pkg-config opencv --libs`
+
+	g++ `pkg-config opencv --cflags` entrena.cpp  -o entrena `pkg-config opencv --libs`
+
+
+clean:
+	rm ${OBJS} ${EXE}
+

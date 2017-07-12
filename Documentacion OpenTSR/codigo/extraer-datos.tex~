@@ -1,0 +1,246 @@
+
+\documentclass{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[utf-8]{inputenc}
+
+
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\def\PY@tok@gd{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\def\PY@tok@gu{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\def\PY@tok@gt{\def\PY@tc##1{\textcolor[rgb]{0.00,0.25,0.82}{##1}}}
+\def\PY@tok@gs{\let\PY@bf=\textbf}
+\def\PY@tok@gr{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\def\PY@tok@cm{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@vg{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@m{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@cs{\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}\def\PY@bc##1{\colorbox[rgb]{1.00,0.94,0.94}{##1}}}
+\def\PY@tok@ge{\let\PY@it=\textit}
+\def\PY@tok@vc{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@il{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@go{\def\PY@tc##1{\textcolor[rgb]{0.50,0.50,0.50}{##1}}}
+\def\PY@tok@cp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@gi{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\def\PY@tok@gh{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\def\PY@tok@ni{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.84,0.33,0.22}{##1}}}
+\def\PY@tok@nl{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.13,0.44}{##1}}}
+\def\PY@tok@nn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@no{\def\PY@tc##1{\textcolor[rgb]{0.38,0.68,0.84}{##1}}}
+\def\PY@tok@na{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@nb{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@nd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.33,0.33,0.33}{##1}}}
+\def\PY@tok@ne{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nf{\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.49}{##1}}}
+\def\PY@tok@si{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.44,0.63,0.82}{##1}}}
+\def\PY@tok@s2{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@vi{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@nt{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.45}{##1}}}
+\def\PY@tok@nv{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@s1{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@gp{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@sh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@ow{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@sx{\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@bp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c1{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@kc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@mf{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@err{\def\PY@bc##1{\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{##1}}}
+\def\PY@tok@kd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@ss{\def\PY@tc##1{\textcolor[rgb]{0.32,0.47,0.09}{##1}}}
+\def\PY@tok@sr{\def\PY@tc##1{\textcolor[rgb]{0.14,0.33,0.53}{##1}}}
+\def\PY@tok@mo{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mi{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@kn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@o{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\def\PY@tok@kr{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@s{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@kp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@w{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\def\PY@tok@kt{\def\PY@tc##1{\textcolor[rgb]{0.56,0.13,0.00}{##1}}}
+\def\PY@tok@sc{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sb{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@k{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@se{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sd{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+\begin{document}
+
+\section*{}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{CvMat} \PY{n}{extraeDatosIMG}\PY{p}{(}\PY{n}{IplImage}\PY{o}{*} \PY{n}{candidato}\PY{p}{)}\PY{p}{\PYZob{}}
+  
+  
+  \PY{n}{CvMat} \PY{o}{*}\PY{n}{DatosExtraidos} \PY{o}{=} \PY{n}{cvCreateMat}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{n}{CV\PYZus{}32FC1}\PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Se almacenan las características de la imagen en un vector:}
+  
+  \PY{c+c1}{// Columna 0, contiene su forma, 3 -> triángulo,}
+  \PY{c+c1}{// 4 -> cuadrado, 8 -> octógono, 9 -> círculo.}
+
+  \PY{c+c1}{// Columna 1, contiene el perímetro del objeto/objetos }
+  \PY{c+c1}{// situado en interior de la señal.}
+
+  \PY{c+c1}{// Columna 2, contiene el área del objeto/objetos situado}
+  \PY{c+c1}{// en interior de la señal.}
+
+  \PY{c+c1}{// Columna 3, contiene el número de vértices del objeto/objetos}
+  \PY{c+c1}{// situado en interior de la señal.}
+
+  \PY{c+c1}{// Columna 4, contiene el número de objetos situados en }
+  \PY{c+c1}{// interior de la señal.}
+
+  \PY{c+c1}{// Declaraciones}
+  \PY{n}{CvSeq}\PY{o}{*} \PY{n}{circles}\PY{p}{,} \PY{o}{*}\PY{n}{result}\PY{p}{,}\PY{o}{*}\PY{n}{contour}\PY{p}{,}\PY{o}{*}\PY{n}{contour2}\PY{p}{,}\PY{o}{*}\PY{n}{contour3}\PY{p}{;}
+
+  \PY{n}{IplImage} \PY{o}{*}\PY{n}{color\PYZus{}seleccionado}\PY{p}{,}\PY{o}{*}\PY{n}{dibujo\PYZus{}interior}\PY{p}{,}\PY{o}{*}\PY{n}{gray}\PY{p}{,}\PY{o}{*}\PY{n}{binaria}\PY{p}{,}\PY{o}{*}\PY{n}{basura1}\PY{p}{,}
+  \PY{o}{*}\PY{n}{basura2}\PY{p}{;}  
+
+  \PY{k+kt}{double} \PY{n}{area}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{perimetro}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}
+  \PY{k+kt}{int} \PY{n}{piezas}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{vertices}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}
+  \PY{n}{CvSeq} \PY{o}{*}\PY{n}{result2}\PY{p}{;}
+
+  \PY{n}{CvMemStorage}\PY{o}{*} \PY{n}{storage}\PY{o}{=}\PY{n}{cvCreateMemStorage}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{o}{*}\PY{n}{storage2}\PY{o}{=}\PY{n}{cvCreateMemStorage}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}
+    \PY{o}{*}\PY{n}{storage3}\PY{o}{=}\PY{n}{cvCreateMemStorage}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{o}{*}\PY{n}{storage4}\PY{o}{=}\PY{n}{cvCreateMemStorage}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Paso a escala de grises de la imagen original.}
+  \PY{n}{gray}  \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvGetSize}\PY{p}{(}\PY{n}{candidato}\PY{p}{)}\PY{p}{,} \PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{;}
+  \PY{n}{cvCvtColor}\PY{p}{(}\PY{n}{candidato}\PY{p}{,} \PY{n}{gray}\PY{p}{,} \PY{n}{CV\PYZus{}RGB2GRAY} \PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Binarización de la imagen anterior.}
+  \PY{n}{binaria}  \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvGetSize}\PY{p}{(}\PY{n}{candidato}\PY{p}{)}\PY{p}{,} \PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{;}
+  \PY{n}{cvThreshold}\PY{p}{(}\PY{n}{gray}\PY{p}{,}\PY{n}{binaria}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,} \PY{n}{CV\PYZus{}THRESH\PYZus{}BINARY} \PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Se busca contorno exterior (CV\PYZus{}RETR\PYZus{}EXTERNAL) de la imagen.  }
+  \PY{n}{piezas} \PY{o}{=} \PY{n}{cvFindContours}\PY{p}{(}\PY{n}{binaria}\PY{p}{,} \PY{n}{storage}\PY{p}{,} \PY{o}{&}\PY{n}{contour}\PY{p}{,} \PY{k}{sizeof}\PY{p}{(}\PY{n}{CvContour}\PY{p}{)}\PY{p}{,}
+  \PY{n}{CV\PYZus{}RETR\PYZus{}EXTERNAL}\PY{p}{,}\PY{n}{CV\PYZus{}CHAIN\PYZus{}APPROX\PYZus{}SIMPLE}\PY{p}{)}\PY{p}{;}
+  
+  \PY{k+kt}{int} \PY{n}{forma\PYZus{}figura} \PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}
+  
+  \PY{c+c1}{// Si el contorno es único en la imagen }
+  \PY{c+c1}{// (solo un contorno externo) se analiza.}
+  \PY{k}{if}\PY{p}{(} \PY{n}{piezas} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{\PYZob{}} 
+    
+    \PY{n}{cvDrawContours}\PY{p}{(}\PY{n}{binaria}\PY{p}{,} \PY{n}{contour}\PY{p}{,}\PY{n}{cvRealScalar}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{)}\PY{p}{,}\PY{n}{cvRealScalar}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{)}\PY{p}{,}
+    \PY{l+m+mi}{0}\PY{p}{,}\PY{n}{CV\PYZus{}FILLED}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{;}
+
+    \PY{c+c1}{// Detectamos si se trata de un círculo}
+    \PY{n}{circles} \PY{o}{=} \PY{n}{cvHoughCircles}\PY{p}{(}\PY{n}{binaria}\PY{p}{,} \PY{n}{storage4}\PY{p}{,} \PY{n}{CV\PYZus{}HOUGH\PYZus{}GRADIENT}\PY{p}{,}
+    \PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{600}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,}\PY{l+m+mi}{300}\PY{p}{)}\PY{p}{;}      
+    
+    \PY{k}{if}\PY{p}{(}\PY{n}{circles}\PY{o}{-}\PY{o}{>}\PY{n}{total} \PY{o}{=}\PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{\PYZob{}} \PY{c+c1}{// Si es un círculo...}
+      \PY{n}{forma\PYZus{}figura}\PY{o}{=}\PY{l+m+mi}{9}\PY{p}{;}
+      \PY{n}{cvSetReal2D}\PY{p}{(}\PY{n}{DatosExtraidos}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+    \PY{k}{else}\PY{p}{\PYZob{}} \PY{c+c1}{// Si no, se busca que otra figura pude ser.}
+      
+      \PY{c+c1}{// Detección del polinomio APROXIMADO que encierra la figura.}
+      \PY{n}{result} \PY{o}{=} \PY{n}{cvApproxPoly}\PY{p}{(}\PY{n}{contour}\PY{p}{,} \PY{k}{sizeof}\PY{p}{(}\PY{n}{CvContour}\PY{p}{)}\PY{p}{,} \PY{n}{storage}\PY{p}{,} 
+      \PY{n}{CV\PYZus{}POLY\PYZus{}APPROX\PYZus{}DP}\PY{p}{,}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+      
+      \PY{n}{forma\PYZus{}figura} \PY{o}{=} \PY{n}{tipo\PYZus{}figura}\PY{p}{(}\PY{n}{result}\PY{p}{,}\PY{n}{candidato}\PY{p}{)}\PY{p}{;}
+      \PY{n}{cvSetReal2D}\PY{p}{(}\PY{n}{DatosExtraidos}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{forma\PYZus{}figura}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+
+    \PY{c+c1}{// Si la forma de la figura es alguna de las buscadas...}
+    \PY{k}{if} \PY{p}{(}\PY{n}{forma\PYZus{}figura} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{\PYZob{}} 
+      
+      \PY{n}{dibujo\PYZus{}interior} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(}\PY{n}{cvGetSize}\PY{p}{(}\PY{n}{candidato}\PY{p}{)}\PY{p}{,}\PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+      \PY{n}{basura1} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(}\PY{n}{cvGetSize}\PY{p}{(}\PY{n}{candidato}\PY{p}{)}\PY{p}{,}\PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+      \PY{n}{basura2} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(}\PY{n}{cvGetSize}\PY{p}{(}\PY{n}{candidato}\PY{p}{)}\PY{p}{,}\PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+      
+      \PY{n}{cvZero}\PY{p}{(}\PY{n}{dibujo\PYZus{}interior}\PY{p}{)}\PY{p}{;}
+      \PY{n}{cvZero}\PY{p}{(}\PY{n}{basura1}\PY{p}{)}\PY{p}{;}
+      \PY{n}{cvZero}\PY{p}{(}\PY{n}{basura2}\PY{p}{)}\PY{p}{;}
+      
+      \PY{c+c1}{// Se localizan los contronos interiores}
+      \PY{n}{cvFindContours}\PY{p}{(}\PY{n}{binaria}\PY{p}{,} \PY{n}{storage2}\PY{p}{,} \PY{o}{&}\PY{n}{contour2}\PY{p}{,} \PY{k}{sizeof}\PY{p}{(}\PY{n}{CvContour}\PY{p}{)}\PY{p}{,}
+      \PY{n}{CV\PYZus{}RETR\PYZus{}TREE}\PY{p}{,} \PY{n}{CV\PYZus{}CHAIN\PYZus{}APPROX\PYZus{}SIMPLE}\PY{p}{)}\PY{p}{;}
+      
+      \PY{c+c1}{// Se dibujan:}
+      
+      \PY{c+c1}{// Dibuja contorno externo.	}
+      \PY{n}{cvDrawContours}\PY{p}{(}\PY{n}{basura1}\PY{p}{,} \PY{n}{contour2}\PY{p}{,} \PY{n}{CV\PYZus{}RGB}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{)}\PY{p}{,}
+      \PY{n}{CV\PYZus{}RGB}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{;} 
+
+      \PY{c+c1}{// Dibuja todos los contornos.}
+      \PY{n}{cvDrawContours}\PY{p}{(}\PY{n}{basura2}\PY{p}{,} \PY{n}{contour2}\PY{p}{,} \PY{n}{CV\PYZus{}RGB}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{)}\PY{p}{,} 
+      \PY{n}{CV\PYZus{}RGB}\PY{p}{(}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{)}\PY{p}{;} 
+      
+      \PY{c+c1}{// Se realiza la diferencia de ambas imágenes para quedarnos}
+      \PY{c+c1}{// con los contornos internos.}
+      \PY{n}{cvSub}\PY{p}{(}\PY{n}{basura2}\PY{p}{,}\PY{n}{basura1}\PY{p}{,}\PY{n}{dibujo\PYZus{}interior}\PY{p}{,}\PY{n+nb}{NULL}\PY{p}{)}\PY{p}{;}
+      
+      
+      \PY{c+c1}{// Extracción  de características del dibujo interior.}
+      \PY{n}{piezas} \PY{o}{=} \PY{n}{cvFindContours}\PY{p}{(}\PY{n}{dibujo\PYZus{}interior}\PY{p}{,} \PY{n}{storage3}\PY{p}{,}
+      \PY{o}{&}\PY{n}{contour3}\PY{p}{,} \PY{k}{sizeof}\PY{p}{(}\PY{n}{CvContour}\PY{p}{)}\PY{p}{,}\PY{n}{CV\PYZus{}RETR\PYZus{}TREE}\PY{p}{,}\PY{n}{CV\PYZus{}CHAIN\PYZus{}APPROX\PYZus{}SIMPLE}\PY{p}{)}\PY{p}{;}
+      
+      \PY{k}{if}\PY{p}{(}\PY{n}{piezas} \PY{o}{>} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{\PYZob{}} \PY{c+c1}{// Si existen piezas interiores}
+	\PY{n}{CvSeq} \PY{o}{*}\PY{n}{contour\PYZus{}aux} \PY{o}{=} \PY{n}{contour3}\PY{p}{;}
+	\PY{k}{for}\PY{p}{(}\PY{p}{;} \PY{n}{contour3} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{contour3} \PY{o}{=} \PY{n}{contour3}\PY{o}{-}\PY{o}{>}\PY{n}{h\PYZus{}next} \PY{p}{)}\PY{p}{\PYZob{}} 
+          \PY{c+c1}{// Se calcula el área del objeto.}
+	  \PY{n}{area} \PY{o}{=} \PY{n}{area} \PY{o}{+} \PY{n}{fabs}\PY{p}{(}\PY{n}{cvContourArea}\PY{p}{(}\PY{n}{contour3}\PY{p}{)}\PY{p}{)}\PY{p}{;} 
+         
+          \PY{c+c1}{// Se calcula el perimetro del objeto.}
+	  \PY{n}{perimetro} \PY{o}{=} \PY{n}{perimetro} \PY{o}{+} \PY{n}{cvContourPerimeter}\PY{p}{(}\PY{n}{contour3}\PY{p}{)}\PY{p}{;}
+ 
+          \PY{c+c1}{//Número de vertices.}
+	  \PY{n}{result2} \PY{o}{=} \PY{n}{cvApproxPoly}\PY{p}{(}\PY{n}{contour3}\PY{p}{,} \PY{k}{sizeof}\PY{p}{(}\PY{n}{CvContour}\PY{p}{)}\PY{p}{,} 
+          \PY{n}{storage3}\PY{p}{,} \PY{n}{CV\PYZus{}POLY\PYZus{}APPROX\PYZus{}DP}\PY{p}{,}\PY{l+m+mf}{1.5}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+
+	  \PY{n}{vertices} \PY{o}{=} \PY{n}{vertices} \PY{o}{+} \PY{n}{result2}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{p}{;}                 
+	\PY{p}{\PYZcb{}}
+	
+	\PY{k}{if}\PY{p}{(}\PY{n}{contour\PYZus{}aux}\PY{o}{!}\PY{o}{=}\PY{n+nb}{NULL}\PY{p}{)}\PY{p}{\PYZob{}}
+	  \PY{n}{cvClearSeq}\PY{p}{(}\PY{n}{contour\PYZus{}aux}\PY{p}{)}\PY{p}{;}
+	\PY{p}{\PYZcb{}}
+	
+	\PY{c+c1}{// Eliminación de estructuras.}
+	\PY{n}{cvReleaseImage}\PY{p}{(} \PY{o}{&}\PY{n}{basura2} \PY{p}{)}\PY{p}{;}
+	\PY{n}{cvReleaseImage}\PY{p}{(} \PY{o}{&}\PY{n}{basura1} \PY{p}{)}\PY{p}{;}
+	\PY{n}{cvReleaseImage}\PY{p}{(} \PY{o}{&}\PY{n}{candidato} \PY{p}{)}\PY{p}{;}
+	\PY{n}{cvReleaseImage}\PY{p}{(} \PY{o}{&}\PY{n}{color\PYZus{}seleccionado}\PY{p}{)}\PY{p}{;} 
+	\PY{n}{cvReleaseImage}\PY{p}{(}\PY{o}{&}\PY{n}{dibujo\PYZus{}interior}\PY{p}{)}\PY{p}{;}
+	\PY{n}{cvReleaseImage}\PY{p}{(}\PY{o}{&}\PY{n}{gray}\PY{p}{)}\PY{p}{;}
+	\PY{n}{cvReleaseImage}\PY{p}{(}\PY{o}{&}\PY{n}{binaria}\PY{p}{)}\PY{p}{;}
+	
+      \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+    
+    \PY{n}{cvShowImage}\PY{p}{(} \PY{l+s}{"}\PY{l+s}{Plantilla}\PY{l+s}{"}\PY{p}{,}\PY{n}{candidato} \PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  
+  \PY{c+c1}{// Se devuelven los datos extraídos de la imagen.}
+  \PY{k}{return} \PY{o}{*}\PY{n}{DatosExtraidos}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+
+\end{document}

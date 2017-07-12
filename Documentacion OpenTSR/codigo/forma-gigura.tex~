@@ -1,0 +1,184 @@
+
+\documentclass{article}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage[utf-8]{inputenc}
+
+
+
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\def\PY@tok@gd{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\def\PY@tok@gu{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\def\PY@tok@gt{\def\PY@tc##1{\textcolor[rgb]{0.00,0.25,0.82}{##1}}}
+\def\PY@tok@gs{\let\PY@bf=\textbf}
+\def\PY@tok@gr{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\def\PY@tok@cm{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@vg{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@m{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@cs{\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}\def\PY@bc##1{\colorbox[rgb]{1.00,0.94,0.94}{##1}}}
+\def\PY@tok@ge{\let\PY@it=\textit}
+\def\PY@tok@vc{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@il{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@go{\def\PY@tc##1{\textcolor[rgb]{0.50,0.50,0.50}{##1}}}
+\def\PY@tok@cp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@gi{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\def\PY@tok@gh{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\def\PY@tok@ni{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.84,0.33,0.22}{##1}}}
+\def\PY@tok@nl{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.13,0.44}{##1}}}
+\def\PY@tok@nn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@no{\def\PY@tc##1{\textcolor[rgb]{0.38,0.68,0.84}{##1}}}
+\def\PY@tok@na{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@nb{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.05,0.52,0.71}{##1}}}
+\def\PY@tok@nd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.33,0.33,0.33}{##1}}}
+\def\PY@tok@ne{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@nf{\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.49}{##1}}}
+\def\PY@tok@si{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.44,0.63,0.82}{##1}}}
+\def\PY@tok@s2{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@vi{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@nt{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.02,0.16,0.45}{##1}}}
+\def\PY@tok@nv{\def\PY@tc##1{\textcolor[rgb]{0.73,0.38,0.84}{##1}}}
+\def\PY@tok@s1{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@gp{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@sh{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@ow{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@sx{\def\PY@tc##1{\textcolor[rgb]{0.78,0.36,0.04}{##1}}}
+\def\PY@tok@bp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c1{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@kc{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@c{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.38,0.63,0.69}{##1}}}
+\def\PY@tok@mf{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@err{\def\PY@bc##1{\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{##1}}}
+\def\PY@tok@kd{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@ss{\def\PY@tc##1{\textcolor[rgb]{0.32,0.47,0.09}{##1}}}
+\def\PY@tok@sr{\def\PY@tc##1{\textcolor[rgb]{0.14,0.33,0.53}{##1}}}
+\def\PY@tok@mo{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@mi{\def\PY@tc##1{\textcolor[rgb]{0.25,0.63,0.44}{##1}}}
+\def\PY@tok@kn{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@o{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\def\PY@tok@kr{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@s{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@kp{\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@w{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\def\PY@tok@kt{\def\PY@tc##1{\textcolor[rgb]{0.56,0.13,0.00}{##1}}}
+\def\PY@tok@sc{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sb{\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@k{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.44,0.13}{##1}}}
+\def\PY@tok@se{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+\def\PY@tok@sd{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.44,0.63}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+\begin{document}
+
+\section*{}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{int} \PY{n}{tipo\PYZus{}figura}\PY{p}{(}\PY{n}{CvSeq}\PY{o}{*} \PY{n}{result}\PY{p}{,}\PY{n}{IplImage}\PY{o}{*} \PY{n}{plantilla}\PY{p}{)}\PY{p}{\PYZob{}}  \PY{c+c1}{//Localiza la forma de la figura a partir de un polígono.}
+
+  \PY{k+kt}{double} \PY{n}{A}\PY{p}{,}\PY{n}{B}\PY{p}{,}\PY{n}{C}\PY{p}{,}\PY{n}{D}\PY{p}{,}\PY{n}{E}\PY{p}{,}\PY{n}{F}\PY{p}{,}\PY{n}{G}\PY{p}{,}\PY{n}{H}\PY{p}{;}
+
+  \PY{c+c1}{//CUADRADO, cuatro vértices, área superior a 1000 }
+  \PY{c+c1}{// y estructura convexa. En un conjunto convexo se puede ir}
+  \PY{c+c1}{// de cualquier punto a cualquier otro en vía recta, sin salir del mismo.}
+  \PY{c+c1}{//Formalmente: para todo (A,B) € C ->  [A,B]  € C}
+  \PY{k}{if}\PY{p}{(}\PY{n}{result}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{o}{=}\PY{o}{=}\PY{l+m+mi}{4} \PY{o}{&}\PY{o}{&} \PY{n}{fabs}\PY{p}{(}\PY{n}{cvContourArea}\PY{p}{(}\PY{n}{result}\PY{p}{,}\PY{n}{CV\PYZus{}WHOLE\PYZus{}SEQ}\PY{p}{)}\PY{p}{)}
+   \PY{o}{>} \PY{l+m+mi}{1000} \PY{o}{&}\PY{o}{&} \PY{n}{cvCheckContourConvexity}\PY{p}{(}\PY{n}{result}\PY{p}{)}\PY{p}{)}  
+    \PY{p}{\PYZob{}}
+      \PY{n}{CvPoint} \PY{o}{*}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{;}
+
+      \PY{c+c1}{//Extraemos los puntos de los vértices}
+      \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{l+m+mi}{4}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{n}{pt}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{CvPoint}\PY{o}{*}\PY{p}{)}\PY{n}{cvGetSeqElem}\PY{p}{(}\PY{n}{result}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+
+      \PY{c+c1}{//Procedemos a calcular el ángulo de los 4 vértices (condición: 90 grados cada uno)}
+      \PY{n}{A} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;} 
+      \PY{n}{B} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{C} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;} 
+      \PY{n}{D} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+
+      \PY{k}{if}\PY{p}{(} \PY{n}{A} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{A} \PY{o}{>} \PY{l+m+mi}{88} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{>} \PY{l+m+mi}{88} \PY{o}{&}\PY{o}{&}  \PY{n}{C} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{C} \PY{o}{>} \PY{l+m+mi}{88} \PY{o}{&}\PY{o}{&}  \PY{n}{D} \PY{o}{<} \PY{l+m+mi}{92} \PY{o}{&}\PY{o}{&} \PY{n}{D} \PY{o}{>} \PY{l+m+mi}{88}   \PY{p}{)}\PY{p}{\PYZob{}} 
+	\PY{c+c1}{// Cuadrado detectado}
+	\PY{k}{return} \PY{l+m+mi}{4}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{//OCTÓGONO}
+  \PY{k}{if}\PY{p}{(}\PY{n}{result}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{o}{=}\PY{o}{=}\PY{l+m+mi}{8} \PY{o}{&}\PY{o}{&} \PY{n}{fabs}\PY{p}{(}\PY{n}{cvContourArea}\PY{p}{(}\PY{n}{result}\PY{p}{,}\PY{n}{CV\PYZus{}WHOLE\PYZus{}SEQ}\PY{p}{)}\PY{p}{)}
+   \PY{o}{>} \PY{l+m+mi}{1000} \PY{o}{&}\PY{o}{&} \PY{n}{cvCheckContourConvexity}\PY{p}{(}\PY{n}{result}\PY{p}{)}\PY{p}{)} 
+    \PY{p}{\PYZob{}}
+
+      \PY{c+c1}{//Extraemos los puntos de los vértices}
+      \PY{n}{CvPoint} \PY{o}{*}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{;}
+      \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{l+m+mi}{8}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{n}{pt}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{CvPoint}\PY{o}{*}\PY{p}{)}\PY{n}{cvGetSeqElem}\PY{p}{(}\PY{n}{result}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+
+      \PY{n}{A} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;} 
+      \PY{n}{B} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{C} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;} 
+      \PY{n}{D} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{E} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{F} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{G} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{H} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+
+      \PY{k}{if}\PY{p}{(} \PY{n}{A} \PY{o}{<} \PY{l+m+mi}{137} \PY{o}{&}\PY{o}{&} \PY{n}{A} \PY{o}{>} \PY{l+m+mi}{133} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{<} \PY{l+m+mi}{137} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{>} \PY{l+m+mi}{133}
+          \PY{o}{&}\PY{o}{&}  \PY{n}{C} \PY{o}{<} \PY{l+m+mi}{137} \PY{o}{&}\PY{o}{&} \PY{n}{C} \PY{o}{>} \PY{l+m+mi}{133} \PY{o}{&}\PY{o}{&}  \PY{n}{D} \PY{o}{<} \PY{l+m+mi}{137} \PY{o}{&}\PY{o}{&}
+          \PY{n}{D} \PY{o}{>} \PY{l+m+mi}{133} \PY{o}{&}\PY{o}{&} \PY{n}{E} \PY{o}{<} \PY{l+m+mi}{137} \PY{o}{&}\PY{o}{&} \PY{n}{E} \PY{o}{>} \PY{l+m+mi}{133} \PY{o}{&}\PY{o}{&}  \PY{n}{F} \PY{o}{<} \PY{l+m+mi}{137}
+          \PY{o}{&}\PY{o}{&} \PY{n}{F} \PY{o}{>} \PY{l+m+mi}{133} \PY{o}{&}\PY{o}{&} \PY{n}{G} \PY{o}{<} \PY{l+m+mi}{137} \PY{o}{&}\PY{o}{&} \PY{n}{G} \PY{o}{>} \PY{l+m+mi}{133} \PY{o}{&}\PY{o}{&} \PY{n}{H} \PY{o}{<} \PY{l+m+mi}{137}
+          \PY{o}{&}\PY{o}{&} \PY{n}{H} \PY{o}{>} \PY{l+m+mi}{133}\PY{p}{)}\PY{p}{\PYZob{}} 
+
+	\PY{c+c1}{// Octógono detectado.}
+	\PY{k}{return} \PY{l+m+mi}{8}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+	   
+    \PY{p}{\PYZcb{}} 
+         
+  \PY{c+c1}{//TRIANGULO}
+  \PY{k}{if}\PY{p}{(}\PY{n}{result}\PY{o}{-}\PY{o}{>}\PY{n}{total}\PY{o}{=}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)} 
+    \PY{p}{\PYZob{}}
+
+      \PY{c+c1}{//Extraemos los puntos de los vértices		  }
+      \PY{n}{CvPoint} \PY{o}{*}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{;}
+      \PY{k}{for}\PY{p}{(}\PY{k+kt}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{l+m+mi}{3}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+	\PY{n}{pt}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n}{CvPoint}\PY{o}{*}\PY{p}{)}\PY{n}{cvGetSeqElem}\PY{p}{(}\PY{n}{result}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+
+      \PY{n}{A} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;} 
+      \PY{n}{B} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;}
+      \PY{n}{C} \PY{o}{=} \PY{n}{acos}\PY{p}{(}\PY{n}{angulo}\PY{p}{(}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,}\PY{n}{pt}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{180}\PY{o}{/}\PY{n}{PI}\PY{p}{;} 
+
+      \PY{k}{if}\PY{p}{(} \PY{n}{A} \PY{o}{<} \PY{l+m+mi}{66} \PY{o}{&}\PY{o}{&} \PY{n}{A} \PY{o}{>} \PY{l+m+mi}{50} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{<} \PY{l+m+mi}{67} \PY{o}{&}\PY{o}{&} \PY{n}{B} \PY{o}{>} \PY{l+m+mi}{50} \PY{o}{&}\PY{o}{&}
+          \PY{n}{C} \PY{o}{<} \PY{l+m+mi}{67} \PY{o}{&}\PY{o}{&} \PY{n}{C} \PY{o}{>} \PY{l+m+mi}{50} \PY{p}{)}\PY{p}{\PYZob{}} 
+	\PY{c+c1}{// Triángulo detectado.}
+	\PY{k}{return} \PY{l+m+mi}{3}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+	  
+    \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{// Forma no identificada.}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+
+\end{document}

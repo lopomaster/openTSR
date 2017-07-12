@@ -1,0 +1,10 @@
+OpenTSR: Vehículo reconocedor de señales de tráfico.
+
+Proyecto Ingeniería Informática de Sistemas.
+
+Manuel López Urbina.
+
+
+Para ejecutar la consola de control del vehículo haga click sobre el fichero ejecutable "Interfaz". Pordrá a partir de ese instante usar la aplicación.
+
+Ver guía de usuario incluida en la documentación para más detalles.

@@ -1,0 +1,12 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{double} \PY{n+nf}{angulo}\PY{p}{(} \PY{n}{CvPoint}\PY{o}{*} \PY{n}{pt1}\PY{p}{,} \PY{n}{CvPoint}\PY{o}{*} \PY{n}{pt2}\PY{p}{,} \PY{n}{CvPoint}\PY{o}{*} \PY{n}{pt0} \PY{p}{)}
+\PY{p}{\PYZob{}}
+    \PY{k+kt}{double} \PY{n}{dx1} \PY{o}{=} \PY{n}{pt1}\PY{o}{-}\PY{o}{>}\PY{n}{x} \PY{o}{-} \PY{n}{pt0}\PY{o}{-}\PY{o}{>}\PY{n}{x}\PY{p}{;}
+    \PY{k+kt}{double} \PY{n}{dy1} \PY{o}{=} \PY{n}{pt1}\PY{o}{-}\PY{o}{>}\PY{n}{y} \PY{o}{-} \PY{n}{pt0}\PY{o}{-}\PY{o}{>}\PY{n}{y}\PY{p}{;}
+    \PY{k+kt}{double} \PY{n}{dx2} \PY{o}{=} \PY{n}{pt2}\PY{o}{-}\PY{o}{>}\PY{n}{x} \PY{o}{-} \PY{n}{pt0}\PY{o}{-}\PY{o}{>}\PY{n}{x}\PY{p}{;}
+    \PY{k+kt}{double} \PY{n}{dy2} \PY{o}{=} \PY{n}{pt2}\PY{o}{-}\PY{o}{>}\PY{n}{y} \PY{o}{-} \PY{n}{pt0}\PY{o}{-}\PY{o}{>}\PY{n}{y}\PY{p}{;}
+
+    \PY{k}{return} \PY{p}{(}\PY{p}{(}\PY{n}{dx1}\PY{o}{*}\PY{n}{dx2} \PY{o}{+} \PY{n}{dy1}\PY{o}{*}\PY{n}{dy2}\PY{p}{)}\PY{o}{/}\PY{n}{sqrt}\PY{p}{(}\PY{p}{(}\PY{n}{dx1}\PY{o}{*}\PY{n}{dx1} \PY{o}{+} \PY{n}{dy1}\PY{o}{*}\PY{n}{dy1}\PY{p}{)}\PY{o}{*}
+            \PY{p}{(}\PY{n}{dx2}\PY{o}{*}\PY{n}{dx2} \PY{o}{+} \PY{n}{dy2}\PY{o}{*}\PY{n}{dy2}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{1e-10}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

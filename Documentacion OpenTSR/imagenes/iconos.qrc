@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>1322221692_.png</file>
+        <file>1322221692_abajo.png</file>
+        <file>1322221692_derecha.png</file>
+        <file>1322221692_izquierda.png</file>
+        <file>1322222492_connect.png</file>
+        <file>1322222705_disconnect.png</file>
+        <file>1322483551_Signal_stop.png</file>
+        <file>1322484513_camera.png</file>
+        <file>1322506788_Gnome-Dialog-Information-64.png</file>
+        <file>1322506788_Gnome-Dialog-Information-60.png</file>
+        <file>1322569016_speed.png</file>
+        <file>1322569016_speed_low.png</file>
+        <file>1322571319_help_64.png</file>
+        <file>1323444825_About.png</file>
+        <file>1323446197_preferences-system.png</file>
+        <file>1323451436_button_cancel.png</file>
+        <file>1324037896_stock_save.png</file>
+        <file>1329150876_help-browser.png</file>
+        <file>srv_icon.png</file>
+    </qresource>
+</RCC>

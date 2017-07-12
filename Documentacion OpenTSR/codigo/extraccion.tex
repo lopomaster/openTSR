@@ -1,0 +1,54 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{// Segmentación por color}
+\PY{n}{img\PYZus{}selec\PYZus{}color} \PY{o}{=} \PY{n}{segmentacion\PYZus{}RGB}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{;}
+
+\PY{n}{dst} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvGetSize}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{,}\PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{;}
+\PY{n}{cvZero}\PY{p}{(}\PY{n}{dst}\PY{p}{)}\PY{p}{;}
+
+\PY{c+c1}{// Búsqueda de contornos en la imagen obtenida tras la selección por color.}
+\PY{n}{cvFindContours}\PY{p}{(}\PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{,} \PY{n}{storage}\PY{p}{,} \PY{o}{&}\PY{n}{contour}\PY{p}{,} \PY{k}{sizeof}\PY{p}{(}\PY{n}{CvContour}\PY{p}{)}\PY{p}{,}
+\PY{n}{CV\PYZus{}RETR\PYZus{}EXTERNAL}\PY{p}{,} \PY{n}{CV\PYZus{}CHAIN\PYZus{}APPROX\PYZus{}NONE}\PY{p}{)}\PY{p}{;}
+
+\PY{n}{senial} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(}\PY{n}{cvGetSize}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{,} \PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{;}
+\PY{n}{cvZero}\PY{p}{(}\PY{n}{senial}\PY{p}{)}\PY{p}{;}     
+
+\PY{c+c1}{// Para objeto encontrado:}
+\PY{k}{for}\PY{p}{(}\PY{p}{;} \PY{n}{contour} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{contour} \PY{o}{=} \PY{n}{contour}\PY{o}{-}\PY{o}{>}\PY{n}{h\PYZus{}next} \PY{p}{)}\PY{p}{\PYZob{}}
+  
+  \PY{c+c1}{// Se calcula su área.}
+  \PY{n}{area}\PY{o}{=}\PY{n}{fabs}\PY{p}{(}\PY{n}{cvContourArea}\PY{p}{(}\PY{n}{contour}\PY{p}{,}\PY{n}{CV\PYZus{}WHOLE\PYZus{}SEQ}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Si el área supera un determinado valor de área. }
+  \PY{k}{if}\PY{p}{(}\PY{n}{area}\PY{o}{>}\PY{o}{=}\PY{l+m+mi}{300}\PY{p}{)}\PY{p}{\PYZob{}}
+    
+    \PY{c+c1}{// Se dibuja el objeto en una imagen.}
+    \PY{n}{cvDrawContours}\PY{p}{(}\PY{n}{dst}\PY{p}{,} \PY{n}{contour}\PY{p}{,} \PY{n}{cvScalar}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,}\PY{n}{cvScalar}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{o}{-}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{CV\PYZus{}FILLED}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)}\PY{p}{;}
+    
+    \PY{c+c1}{// Se calcula el área mínima que encierra al objeto.}
+    \PY{n}{rect} \PY{o}{=} \PY{n}{cvBoundingRect}\PY{p}{(}\PY{n}{contour}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;} 
+    
+    \PY{c+c1}{// Selección de las regiones de interés.}
+    \PY{n}{cvSetImageROI}\PY{p}{(}\PY{n}{dst}\PY{p}{,}\PY{n}{rect}\PY{p}{)}\PY{p}{;}
+    \PY{n}{cvSetImageROI}\PY{p}{(}\PY{n}{senial}\PY{p}{,}\PY{n}{rect}\PY{p}{)}\PY{p}{;}
+    \PY{n}{cvSetImageROI}\PY{p}{(}\PY{n}{img}\PY{p}{,}\PY{n}{rect}\PY{p}{)}\PY{p}{;}
+    
+    \PY{c+c1}{// Se realiza la copia mediante la}
+    \PY{c+c1}{// utilización de máscaras para eliminar el fondo del objeto.}
+    \PY{n}{cvCopy}\PY{p}{(}\PY{n}{img}\PY{p}{,}\PY{n}{senial}\PY{p}{,}\PY{n}{dst}\PY{p}{)}\PY{p}{;}
+
+    \PY{c+c1}{// Se eliminan las regiones de interés establecidas previamente.}
+    \PY{n}{cvResetImageROI}\PY{p}{(}\PY{n}{dst}\PY{p}{)}\PY{p}{;}
+    \PY{n}{cvResetImageROI}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{;}
+    
+    \PY{c+c1}{// Se redimensiona la imagen.}
+    \PY{n}{identificar} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvSize}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{,}\PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{;}
+    \PY{n}{cvResize}\PY{p}{(}\PY{n}{senial}\PY{p}{,}\PY{n}{identificar}\PY{p}{,}\PY{n}{CV\PYZus{}INTER\PYZus{}LINEAR}\PY{p}{)}\PY{p}{;}
+    
+    \PY{c+c1}{// Y ya disponemos la imagen con el elemento a identificar.   }
+    \PY{n}{cvShowImage}\PY{p}{(} \PY{l+s}{"}\PY{l+s}{Elemento}\PY{l+s}{"}\PY{p}{,}\PY{n}{identificar}\PY{p}{)}\PY{p}{;}
+
+    \PY{c+c1}{// ALGORITMO IDENTIFICADOR}
+
+  \PY{p}{\PYZcb{}} \PY{c+c1}{// Fin if.}
+ \PY{p}{\PYZcb{}} \PY{c+c1}{// Fin for.}
+\end{Verbatim}

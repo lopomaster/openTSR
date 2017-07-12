@@ -1,0 +1,38 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{// ALGORITMO DE IDENTIFICACIÓN}
+
+\PY{c+c1}{// Carga de imagen referencia o plantilla.}
+\PY{n}{tpl} \PY{o}{=} \PY{n}{cvLoadImage}\PY{p}{(} \PY{n}{directorio}\PY{p}{,} \PY{n}{CV\PYZus{}LOAD\PYZus{}IMAGE\PYZus{}COLOR} \PY{p}{)}\PY{p}{;}
+
+\PY{c+c1}{// Cáculo de ancho y alto de la imagen resultado.}
+\PY{n}{width}  \PY{o}{=} \PY{n}{identificar}\PY{o}{-}\PY{o}{>}\PY{n}{width}  \PY{o}{-} \PY{n}{tpl}\PY{o}{-}\PY{o}{>}\PY{n}{width} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{;}
+\PY{n}{height} \PY{o}{=} \PY{n}{identificar}\PY{o}{-}\PY{o}{>}\PY{n}{height} \PY{o}{-} \PY{n}{tpl}\PY{o}{-}\PY{o}{>}\PY{n}{height} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{;}
+
+\PY{c+c1}{// Se crea la imagen donde se almacenará el resultado de la comparación.}
+\PY{n}{res} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(} \PY{n}{cvSize}\PY{p}{(} \PY{n}{width}\PY{p}{,} \PY{n}{height} \PY{p}{)}\PY{p}{,} \PY{n}{IPL\PYZus{}DEPTH\PYZus{}32F}\PY{p}{,} \PY{l+m+mi}{1} \PY{p}{)}\PY{p}{;}
+
+\PY{c+c1}{// Se realiza la comparación:}
+\PY{n}{cvMatchTemplate}\PY{p}{(}\PY{n}{identificar}\PY{p}{,} \PY{n}{tpl}\PY{p}{,} \PY{n}{res}\PY{p}{,} \PY{n}{CV\PYZus{}TM\PYZus{}SQDIFF\PYZus{}NORMED}\PY{p}{)}\PY{p}{;}
+
+\PY{k}{for}\PY{p}{(} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0} \PY{p}{;} \PY{n}{i} \PY{o}{<} \PY{n}{height} \PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for}\PY{p}{(} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0} \PY{p}{;} \PY{n}{j} \PY{o}{<} \PY{n}{width} \PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+
+    \PY{c+c1}{// sacamos el elemento:}
+    \PY{n}{s} \PY{o}{=} \PY{n}{cvGet2D}\PY{p}{(} \PY{n}{res}\PY{p}{,} \PY{n}{i}\PY{p}{,} \PY{n}{j} \PY{p}{)}\PY{p}{;}
+    
+    \PY{c+c1}{// Si el valor se localiza entre el rango establecido...}
+    \PY{k}{if}\PY{p}{(} \PY{n}{s}\PY{p}{.}\PY{n}{val}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{<}\PY{o}{=} \PY{n}{umbral} \PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{c+c1}{// Dibujamos el contorno al objeto identificado ENCONTRADO!}
+      \PY{n}{fprintf}\PY{p}{(} \PY{n}{stderr}\PY{p}{,} \PY{l+s}{"}\PY{l+s}{¡50 m/h!}\PY{l+s}{"}\PY{p}{)}\PY{p}{;}
+      
+      \PY{n}{pt1}\PY{p}{.}\PY{n}{x} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{x}\PY{p}{;}
+      \PY{n}{pt1}\PY{p}{.}\PY{n}{y} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{y}\PY{p}{;}
+      \PY{n}{pt2}\PY{p}{.}\PY{n}{x} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{x} \PY{o}{+} \PY{n}{rect}\PY{p}{.}\PY{n}{width}\PY{p}{;}
+      \PY{n}{pt2}\PY{p}{.}\PY{n}{y} \PY{o}{=} \PY{n}{rect}\PY{p}{.}\PY{n}{y} \PY{o}{+} \PY{n}{rect}\PY{p}{.}\PY{n}{height}\PY{p}{;}
+      
+      \PY{c+c1}{// Se dibuja el rectángulo que encierra al objeto.}
+      \PY{n}{cvRectangle}\PY{p}{(}\PY{n}{img}\PY{p}{,}\PY{n}{pt1}\PY{p}{,}\PY{n}{pt2}\PY{p}{,}\PY{n}{CV\PYZus{}RGB}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{255}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+  \PY{p}{\PYZcb{}}
+ \PY{p}{\PYZcb{}}
+\end{Verbatim}

@@ -1,0 +1,43 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+cp}{#}\PY{c+cp}{include <stdio.h>}
+\PY{c+cp}{#}\PY{c+cp}{include <stdlib.h>}
+\PY{c+cp}{#}\PY{c+cp}{include "opencv}\PY{c+cp}{/}\PY{c+cp}{cv.h" }
+\PY{c+cp}{#}\PY{c+cp}{include "opencv}\PY{c+cp}{/}\PY{c+cp}{highgui.h"}
+
+\PY{k+kt}{int} \PY{n+nf}{main}\PY{p}{(}\PY{k+kt}{int} \PY{n}{argc}\PY{p}{,} \PY{k+kt}{char} \PY{o}{*}\PY{n}{argv}\PY{p}{[}\PY{p}{]}\PY{p}{)}
+\PY{p}{\PYZob{}}
+  \PY{n}{IplImage} \PY{o}{*}\PY{n}{img}\PY{o}{=}\PY{n+nb}{NULL}\PY{p}{;}
+
+  \PY{k+kt}{char} \PY{n}{c}\PY{o}{=}\PY{n+nb}{NULL}\PY{p}{;}
+
+  \PY{c+c1}{// Crea una ventana llamada Original Imagen}
+  \PY{c+c1}{// con tamaño predeterminado.}
+  \PY{n}{cvNamedWindow}\PY{p}{(}\PY{l+s}{"}\PY{l+s}{Imagen}\PY{l+s}{"}\PY{p}{,}\PY{n}{CV\PYZus{}WINDOW\PYZus{}AUTOSIZE}\PY{p}{)}\PY{p}{;}
+ 
+  \PY{c+c1}{// Crea la conexion con la Webcam.}
+  \PY{n}{CvCapture}\PY{o}{*} \PY{n}{captura} \PY{o}{=} \PY{n}{cvCaptureFromCAM}\PY{p}{(}\PY{o}{-}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+ 
+   \PY{c+c1}{// Si la tecla pulsada es ESC se sale del bucle.}
+   \PY{k}{while}\PY{p}{(}\PY{n}{c} \PY{o}{!}\PY{o}{=} \PY{l+m+mi}{27}\PY{p}{)} \PY{p}{\PYZob{}} 
+
+    \PY{c+c1}{// Añade el frame capturado dentro de la imagen img.}
+    \PY{n}{img} \PY{o}{=} \PY{n}{cvQueryFrame}\PY{p}{(}\PY{n}{captura}\PY{p}{)}\PY{p}{;}
+
+    \PY{c+c1}{// PROCESAMIENTO DE LA IMAGEN.}
+  
+    \PY{c+c1}{// Se espera la pulsación de alguna tecla }
+    \PY{c+c1}{// durante 10 milésimas de segundo.}
+    \PY{c+c1}{// De ser alguna tecla pulsada, }
+    \PY{c+c1}{// se almacena en la variable c.}
+    \PY{n}{c} \PY{o}{=} \PY{n}{cvWaitKey}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{c+c1}{// Liberación de la cámara.}
+  \PY{n}{cvReleaseCapture}\PY{p}{(}\PY{o}{&}\PY{n}{captura}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Eliminamos todas las estructuras ventana existentes. }
+  \PY{n}{cvDestroyAllWindows}\PY{p}{(}\PY{p}{)}\PY{p}{;} 
+   
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

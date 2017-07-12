@@ -1,0 +1,42 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kt}{int} \PY{n}{Clasificador}\PY{p}{(}\PY{n}{CvMat} \PY{n}{DatosEntrenamiento}\PY{p}{,} \PY{n}{CvMat} \PY{n}{DatosCandidato}\PY{p}{)}\PY{p}{\PYZob{}}
+
+  \PY{c+c1}{// Aplicación del algoritmo KNN.}
+  
+  \PY{k}{const} \PY{k+kt}{int} \PY{n}{K} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{;} \PY{c+c1}{// Se fija valor de K. (K=1, vecino más cercano).}
+  \PY{k+kt}{int} \PY{n}{solucion}\PY{p}{;}    \PY{c+c1}{// Solución}
+  \PY{k+kt}{int} \PY{n}{umbral\PYZus{}minimo} \PY{o}{=} \PY{l+m+mi}{10000}\PY{p}{;} \PY{c+c1}{// Grado de semejanza exigido.}
+
+  \PY{c+c1}{// Vector donde se almacenarán las distancias.}
+  \PY{n}{CvMat}\PY{o}{*} \PY{n}{distancias} \PY{o}{=} \PY{n}{cvCreateMat}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{K}\PY{p}{,}\PY{n}{CV\PYZus{}32FC1}\PY{p}{)}\PY{p}{;}
+ 
+  
+  \PY{c+c1}{// Se crea e inicializa el vector de clases, cada elemento columna de }
+  \PY{c+c1}{// DatosEntrenamiento es una clase.}
+ 
+  \PY{k+kt}{int} \PY{n}{clases}\PY{p}{[}\PY{n}{elementos}\PY{p}{]}\PY{p}{;}	
+  \PY{n}{CvMat}  \PY{n}{Clases} \PY{o}{=} \PY{n}{cvMat}\PY{p}{(}\PY{n}{elementos}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{CV\PYZus{}32FC1}\PY{p}{,}\PY{n}{clases}\PY{p}{)}\PY{p}{;}
+  
+  \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{a}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{a}\PY{o}{<}\PY{n}{DatosEntrenamiento}\PY{p}{.}\PY{n}{rows}\PY{p}{;}\PY{n}{a}\PY{o}{+}\PY{o}{+}\PY{p}{)}\PY{p}{\PYZob{}}
+    \PY{k}{for} \PY{p}{(}\PY{k+kt}{int} \PY{n}{b}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{b}\PY{o}{<}\PY{n}{Clases}\PY{p}{.}\PY{n}{cols}\PY{p}{;}\PY{n}{b}\PY{o}{+}\PY{o}{+}\PY{p}{)}\PY{p}{\PYZob{}}
+      \PY{c+c1}{// Se añaden los identificadores.}
+      \PY{n}{cvSetReal2D}\PY{p}{(}\PY{o}{&}\PY{n}{Clases}\PY{p}{,}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{a}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}}
+  \PY{p}{\PYZcb{}}
+  
+  \PY{c+c1}{// Se crea el clasificador.}
+  \PY{n}{CvKNearest} \PY{n}{knn}\PY{p}{(} \PY{o}{&}\PY{n}{DatosEntrenamiento}\PY{p}{,} \PY{o}{&}\PY{n}{Clases}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{false}\PY{p}{,} \PY{n}{K} \PY{p}{)}\PY{p}{;}
+  \PY{n}{CvMat}\PY{o}{*} \PY{n}{nearests} \PY{o}{=} \PY{n}{cvCreateMat}\PY{p}{(} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{K}\PY{p}{,} \PY{n}{CV\PYZus{}32FC1}\PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Se estima el vecino más cercano.}
+  \PY{n}{solucion} \PY{o}{=} \PY{n}{knn}\PY{p}{.}\PY{n}{find\PYZus{}nearest}\PY{p}{(}\PY{n}{elemento\PYZus{}analisis}\PY{p}{,}\PY{n}{K}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{nearests}\PY{p}{,}\PY{n}{distancias}\PY{p}{)}\PY{p}{;}
+   
+  \PY{c+c1}{//Si hay bastante semejanza, aceptamos como válido. }
+  \PY{k}{if} \PY{p}{(}\PY{n}{cvGetReal2D}\PY{p}{(}\PY{n}{distancias}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)} \PY{o}{<} \PY{n}{umbral\PYZus{}minimo}\PY{p}{)}\PY{p}{\PYZob{}} 
+	\PY{k}{return} \PY{n}{solucion}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{c+c1}{// Si no se devuelve cero.}
+  \PY{k}{return}  \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+

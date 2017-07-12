@@ -1,0 +1,116 @@
+\select@language {spanish}
+\contentsline {chapter}{\'Indice general}{\es@scroman {v}}{section*.4}
+\contentsline {chapter}{\IeC {\'I}ndice de figuras}{\es@scroman {ix}}{section*.6}
+\contentsline {chapter}{\IeC {\'I}ndice de tablas}{\es@scroman {xiii}}{section*.8}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introducci\IeC {\'o}n y antecedentes}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Acerca de este documento}{3}{section.1.3}
+\contentsline {chapter}{\numberline {2}Conceptos b\IeC {\'a}sicos}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Veh\IeC {\'\i }culo Aut\IeC {\'o}nomo}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Inteligencia artificial}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Visi\IeC {\'o}n artificial}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Reconocimiento de patrones}{6}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Aplicaciones}{7}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Modelos de color}{8}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Modelo RGB}{8}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Modelo HSV}{9}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}Uso}{9}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Caracter\IeC {\'\i }sticas}{10}{subsection.2.5.4}
+\contentsline {subsubsection}{Matiz}{10}{section*.13}
+\contentsline {subsubsection}{Saturaci\IeC {\'o}n}{10}{section*.14}
+\contentsline {subsubsection}{Valor}{10}{section*.15}
+\contentsline {subsection}{\numberline {2.5.5}Modelo CYMK}{11}{subsection.2.5.5}
+\contentsline {chapter}{\numberline {3}Herramientas utilizadas}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}Herramientas software}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Licencia}{15}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Herramientas hardware}{15}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Veh\IeC {\'\i }culo SRV-1}{16}{subsection.3.2.1}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas principales}{17}{section*.23}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas hardware}{17}{section*.24}
+\contentsline {subsubsection}{Caracter\IeC {\'\i }sticas software}{18}{section*.25}
+\contentsline {subsection}{\numberline {3.2.2}Router}{19}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}C\IeC {\'a}mara, receptor inal\IeC {\'a}mbrico y capturadora de v\IeC {\'\i }deo}{20}{subsection.3.2.3}
+\contentsline {subsubsection}{Capturadora de v\IeC {\'\i }deo}{20}{section*.27}
+\contentsline {subsubsection}{C\IeC {\'a}mara y receptor inal\IeC {\'a}mbrico}{21}{section*.29}
+\contentsline {subsection}{\numberline {3.2.4}Gamepad}{22}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Ordenador}{22}{subsection.3.2.5}
+\contentsline {chapter}{\numberline {4}Organizaci\IeC {\'o}n temporal}{23}{chapter.4}
+\contentsline {chapter}{\numberline {5}Montaje hardware}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Colocaci\IeC {\'o}n de la c\IeC {\'a}mara en el veh\IeC {\'\i }culo}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Conexi\IeC {\'o}n c\IeC {\'a}mara - PC}{30}{section.5.2}
+\contentsline {section}{\numberline {5.3}Comunicaciones veh\IeC {\'\i }culo - PC}{31}{section.5.3}
+\contentsline {chapter}{\numberline {6}Desarrollo software}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Metodolog\IeC {\'\i }a de desarrollo}{33}{section.6.1}
+\contentsline {section}{\numberline {6.2}Recolecci\IeC {\'o}n de requisitos}{34}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Requisitos funcionales}{34}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Diagramas de casos de uso}{35}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Especificaci\IeC {\'o}n de los casos de uso}{36}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Desarrollo}{42}{subsection.6.2.4}
+\contentsline {chapter}{\numberline {7}Software de reconocimiento}{43}{chapter.7}
+\contentsline {section}{\numberline {7.1}Primer prototipo}{44}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Obtenci\IeC {\'o}n de la imagen}{44}{subsection.7.1.1}
+\contentsline {subsection}{\numberline {7.1.2}Extracci\IeC {\'o}n de caracter\IeC {\'\i }sticas}{46}{subsection.7.1.2}
+\contentsline {subsubsection}{Segmentaci\IeC {\'o}n por color siguiendo el modelo RGB}{47}{section*.57}
+\contentsline {subsubsection}{Extracci\IeC {\'o}n de objetos}{51}{section*.60}
+\contentsline {subsection}{\numberline {7.1.3}Template matching}{54}{subsection.7.1.3}
+\contentsline {subsection}{\numberline {7.1.4}Problemas detectados}{57}{subsection.7.1.4}
+\contentsline {section}{\numberline {7.2}Segundo prototipo}{58}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Extracci\IeC {\'o}n de caracter\IeC {\'\i }sticas}{58}{subsection.7.2.1}
+\contentsline {subsubsection}{Segmentaci\IeC {\'o}n por color siguiendo el modelo HSV}{59}{section*.66}
+\contentsline {subsubsection}{Extracci\IeC {\'o}n de objetos}{61}{section*.68}
+\contentsline {subsubsection}{Obtenci\IeC {\'o}n de datos representativos}{61}{section*.69}
+\contentsline {subsection}{\numberline {7.2.2}Clasificaci\IeC {\'o}n}{69}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Problemas detectados}{71}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}Tercer y \IeC {\'u}ltimo prototipo}{72}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Extracci\IeC {\'o}n de caracter\IeC {\'\i }sticas}{72}{subsection.7.3.1}
+\contentsline {subsubsection}{Segmentaci\IeC {\'o}n por color}{72}{section*.74}
+\contentsline {subsubsection}{Obtenci\IeC {\'o}n de datos representativos}{72}{section*.75}
+\contentsline {subsection}{\numberline {7.3.2}Clasificaci\IeC {\'o}n}{74}{subsection.7.3.2}
+\contentsline {chapter}{\numberline {8}Software de control}{77}{chapter.8}
+\contentsline {section}{\numberline {8.1}Control por parte del usuario}{77}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Control desde teclado}{78}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}Control mediante gamepad}{80}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.2}Control autom\IeC {\'a}tico}{80}{section.8.2}
+\contentsline {chapter}{\numberline {9}Interfaz gr\IeC {\'a}fica}{87}{chapter.9}
+\contentsline {section}{\numberline {9.1}Elementos de la interfaz gr\IeC {\'a}fica}{87}{section.9.1}
+\contentsline {chapter}{\numberline {10}Gu\IeC {\'\i }a de usuario}{89}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introducci\IeC {\'o}n}{89}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.1}Objetivo de esta gu\IeC {\'\i }a}{89}{subsection.10.1.1}
+\contentsline {subsection}{\numberline {10.1.2}Dirigido a}{90}{subsection.10.1.2}
+\contentsline {section}{\numberline {10.2}Obtener OpenTSR}{90}{section.10.2}
+\contentsline {section}{\numberline {10.3}Ingreso al sistema}{90}{section.10.3}
+\contentsline {section}{\numberline {10.4}Convenciones y est\IeC {\'a}ndares a utilizar}{90}{section.10.4}
+\contentsline {subsubsection}{Convenciones del uso del rat\IeC {\'o}n}{91}{section*.86}
+\contentsline {subsection}{\numberline {10.4.1}Convenciones del uso del teclado}{91}{subsection.10.4.1}
+\contentsline {subsubsection}{Convenciones del uso del gamepad}{93}{section*.90}
+\contentsline {section}{\numberline {10.5}Operaciones de la interfaz}{94}{section.10.5}
+\contentsline {section}{\numberline {10.6}Operaciones automatizadas}{97}{section.10.6}
+\contentsline {section}{\numberline {10.7}Montaje del sistema de comunicaciones}{99}{section.10.7}
+\contentsline {section}{\numberline {10.8}Configuraci\IeC {\'o}n del router}{102}{section.10.8}
+\contentsline {section}{\numberline {10.9}Configuraci\IeC {\'o}n del veh\IeC {\'\i }culo SRV-1}{103}{section.10.9}
+\contentsline {subsection}{\numberline {10.9.1}Configuraci\IeC {\'o}n del MatchPort}{103}{subsection.10.9.1}
+\contentsline {subsection}{\numberline {10.9.2}Carga de bater\IeC {\'\i }a del veh\IeC {\'\i }culo SRV-1}{105}{subsection.10.9.2}
+\contentsline {section}{\numberline {10.10}Instalaci\IeC {\'o}n de la capturadora}{106}{section.10.10}
+\contentsline {chapter}{\numberline {11}Comentarios finales}{109}{chapter.11}
+\contentsline {section}{\numberline {11.1}Presupuesto}{109}{section.11.1}
+\contentsline {section}{\numberline {11.2}Conclusiones}{110}{section.11.2}
+\contentsline {section}{\numberline {11.3}Mejoras futuras}{112}{section.11.3}
+\contentsline {chapter}{Anexos}{115}{appendix*.109}
+\contentsline {section}{\numberline {.1}Instalaci\IeC {\'o}n de OpenCV}{115}{section..1}
+\contentsline {section}{\numberline {.2}Instalaci\IeC {\'o}n Qt y Qt Creator}{118}{section..2}
+\contentsline {section}{\numberline {.3}Instalaci\IeC {\'o}n de SDL}{121}{section..3}
+\contentsline {chapter}{Bibliograf\'{\i }a}{123}{section*.119}
+\contentsline {chapter}{GNU Free Documentation License}{125}{section*.121}
+\contentsline {section}{1. APPLICABILITY AND DEFINITIONS}{125}{section*.122}
+\contentsline {section}{2. VERBATIM COPYING}{127}{section*.123}
+\contentsline {section}{3. COPYING IN QUANTITY}{127}{section*.124}
+\contentsline {section}{4. MODIFICATIONS}{128}{section*.125}
+\contentsline {section}{5. COMBINING DOCUMENTS}{129}{section*.126}
+\contentsline {section}{6. COLLECTIONS OF DOCUMENTS}{130}{section*.127}
+\contentsline {section}{7. AGGREGATION WITH INDEPENDENT WORKS}{130}{section*.128}
+\contentsline {section}{8. TRANSLATION}{130}{section*.129}
+\contentsline {section}{9. TERMINATION}{131}{section*.130}
+\contentsline {section}{10. FUTURE REVISIONS OF THIS LICENSE}{131}{section*.131}
+\contentsline {section}{11. RELICENSING}{131}{section*.132}
+\contentsline {section}{ADDENDUM: How to use this License for your documents}{132}{section*.133}

@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{IplImage}\PY{o}{*} \PY{n}{segmentacion\PYZus{}RGB}\PY{p}{(}\PY{n}{IplImage}\PY{o}{*} \PY{n}{img}\PY{p}{)}\PY{p}{\PYZob{}}
+
+  \PY{c+c1}{// Declaración de variables.}
+  \PY{k+kt}{int} \PY{n}{altura}\PY{p}{,}\PY{n}{anchura}\PY{p}{,}\PY{n}{anchura\PYZus{}fila}\PY{p}{,}\PY{n}{canales}\PY{p}{;}
+  \PY{n}{uchar} \PY{o}{*}\PY{n}{data}\PY{p}{;}
+  \PY{k+kt}{int} \PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{;}
+  
+  \PY{c+c1}{// Recopilación de los datos de la imagen de entrada.}
+  \PY{n}{altura} \PY{o}{=} \PY{n}{img}\PY{o}{-}\PY{o}{>}\PY{n}{height}\PY{p}{;}
+  \PY{n}{anchura} \PY{o}{=} \PY{n}{img}\PY{o}{-}\PY{o}{>}\PY{n}{width}\PY{p}{;}
+  \PY{n}{anchura\PYZus{}fila} \PY{o}{=} \PY{n}{img}\PY{o}{-}\PY{o}{>}\PY{n}{widthStep}\PY{p}{;}
+  \PY{n}{canales} \PY{o}{=} \PY{n}{img}\PY{o}{-}\PY{o}{>}\PY{n}{nChannels}\PY{p}{;}
+  \PY{n}{data} \PY{o}{=} \PY{p}{(}\PY{n}{uchar} \PY{o}{*}\PY{p}{)}\PY{n}{img}\PY{o}{-}\PY{o}{>}\PY{n}{imageData}\PY{p}{;}
+     
+  \PY{c+c1}{// Declaración e inicialización a cero de la imagen de salida.}
+  \PY{n}{IplImage}\PY{o}{*} \PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{;}  
+  \PY{n}{img\PYZus{}selec\PYZus{}color} \PY{o}{=} \PY{n}{cvCreateImage}\PY{p}{(}\PY{n}{cvGetSize}\PY{p}{(}\PY{n}{img}\PY{p}{)}\PY{p}{,} \PY{n}{IPL\PYZus{}DEPTH\PYZus{}8U}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{cvZero}\PY{p}{(}\PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Recorrido de la imagen de entrada.}
+  \PY{k}{for}\PY{p}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{<}\PY{n}{altura}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}\PY{p}{\PYZob{}} 
+    \PY{k}{for}\PY{p}{(}\PY{n}{j}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{j}\PY{o}{<}\PY{n}{anchura}\PY{p}{;}\PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)}\PY{p}{\PYZob{}}
+      
+      \PY{c+c1}{// Selección de tonalidades rojas.}
+      \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{anchura\PYZus{}fila}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{canales} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{]} \PY{o}{>} \PY{l+m+mi}{80}\PY{p}{)} \PY{o}{&}\PY{o}{&}
+	  \PY{o}{!}\PY{p}{(}\PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{anchura\PYZus{}fila}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{canales} \PY{o}{+} \PY{l+m+mi}{0}\PY{p}{]} \PY{o}{>} 
+            \PY{n}{data}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{anchura\PYZus{}fila}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{canales} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{]}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{|}\PY{o}{|} 
+	   \PY{p}{(}\PY{n}{data}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{anchura\PYZus{}fila}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{canales} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{>} 
+            \PY{n}{data}\PY{p}{[}\PY{n}{i}\PY{o}{*}\PY{n}{anchura\PYZus{}fila}\PY{o}{+}\PY{n}{j}\PY{o}{*}\PY{n}{canales} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{]}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)} \PY{p}{\PYZob{}}
+    
+        \PY{c+c1}{//Activación de los píxeles que cumplen la condición de color fijada.}
+	\PY{n}{img\PYZus{}selec\PYZus{}color}\PY{o}{-}\PY{o}{>}\PY{n}{imageData}\PY{p}{[} \PY{n}{img\PYZus{}selec\PYZus{}color}\PY{o}{-}\PY{o}{>}\PY{n}{widthStep} \PY{o}{*} \PY{n}{i} \PY{o}{+} \PY{n}{j} \PY{o}{*} \PY{l+m+mi}{1}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{;}
+      \PY{p}{\PYZcb{}}
+    \PY{p}{\PYZcb{}}
+  \PY{p}{\PYZcb{}}
+  
+  \PY{c+c1}{// Erosión para la eliminación de píxeles sueltos.}
+  \PY{n}{cvErode}\PY{p}{(}\PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{,} \PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{,}\PY{n+nb}{NULL}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  
+  \PY{c+c1}{// Dilatación para expandir los objetos de la imagen.}
+  \PY{n}{cvDilate}\PY{p}{(}\PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{,}\PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{,}\PY{n+nb}{NULL}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{;}
+
+  \PY{c+c1}{// Se devuelve la imagen resultante.	     }
+  \PY{k}{return} \PY{n}{img\PYZus{}selec\PYZus{}color}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}

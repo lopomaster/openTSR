@@ -1,0 +1,54 @@
+\begin{thebibliography}{10}
+
+\bibitem{website:iris}
+{Forja rediris}.
+\newblock \url{https://forja.rediris.es/}.
+
+\bibitem{website:metrica}
+{Métrica v3}.
+\newblock \url{http://www.csi.map.es/csi/metrica3}.
+
+\bibitem{website:qt}
+{Qt Reference Documentation}.
+\newblock \url{ http://doc.qt.nokia.com/4.7-snapshot/designer-manual.html}.
+
+\bibitem{website:opencv}
+{Reference of OpenCV Language Library}.
+\newblock \url{http://docs.opencv.org/}.
+
+\bibitem{website:srv}
+{Surveyor Corporation}.
+\newblock \url{http://www.surveyor.com/SRV_info.html}.
+
+\bibitem{website:srvcontrol}
+John Cummins.~M.P. Azhar.Sklar.
+\newblock {Surveyor Robot Software 1}.
+\newblock
+  \url{http://agents.sci.brooklyn.cuny.edu/robotics.edu/bcsoftware.php}.
+
+\bibitem{fundamentos}
+Francisco Palomo Lozano. Inmaculada Medina Bulo. Gerardo~Aburruzaga García.
+\newblock {\em Fundamentos de C++.}
+\newblock Servicio de Publicaciones de la Universidad de Cádiz, 2006.
+
+\bibitem{website:free1}
+{Gerardo Aburruzaga García}.
+\newblock {Make. Un programa para controlar la recompilación}.
+\newblock \url{http://www.uca.es/softwarelibre/publicaciones/make.pdf}.
+
+\bibitem{opencvbook}
+Gary Bradski.~Adrian Kaehler.
+\newblock {\em Learning OpenCV Computer Vision with the OpenCV Library}.
+\newblock O'Reilly Media, 2008.
+
+\bibitem{librosvn}
+Ben Collins-Sussman. Brian W. Fitzpatrick. C.~Michael Pilato.
+\newblock {\em Control de versiones con Subversion}.
+\newblock O'Reilly Media, 2006.
+
+\bibitem{website:free2}
+{Wikibooks}.
+\newblock {The Book of LaTeX}.
+\newblock \url{http://en.wikibooks.org/wiki/LaTeX}.
+
+\end{thebibliography}
